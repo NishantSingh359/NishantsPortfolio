@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon"  href="favicon.ico" >
+    
+    git add .
+    git commit -m "Updated favicon for the website"
+    git push origin main
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Singh</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <head>
+
+
+        <nav>
+            <div class="left">Nishant's <span style=" color: purple;">Portfolio</span></div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contactme">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <section id="home" class="firstsection">
+            <div class="leftsection">
+                Hi, I'm <spam class='name'>Nishant Singh</spam>
+                <div>I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button href="/" class="btn">Resume</button>
+
+                    <a class="btn-a" href="https://github.com/NishantSingh359/NishantSingh359" target="_blank">
+                        <button class="btn">Git Hub</button>
+                    </a>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="dashboard.png" alt="" width="100%" height="100%">
+            </div>
+
+        </section>
+        <hr>
+        <section id="about">
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="https://avatars.githubusercontent.com/u/180900384?v=4" alt="Nishant Singh">
+                </div>
+                <div class="about-text">
+                    <h2 style="font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 500;
+                    ">Nishant Singh</h2>
+                    <p class="p">Data Analytics | And Enjoy Web Development</p>
+                    <p class="p">Python | MySQL | Excel | Tableau | Power BI</p>
+                    <p style="font-style: italic; font-size: clamp(11px, 2vw, 14px);">When I’m not coding, I explore
+                        Startups, and read
+                        Daily Business News.</p>
+
+
+                    <!-- Show More / Show Less Button -->
+                    <button id="toggle-btn" class="show-button">Show More</button>
+                </div>
+            </div>
+
+            <!-- Hidden Content -->
+            <div id="more-info" class="about-more">
+                <p>Data Analyst | Data Insights <br>
+
+                    I recently completed a Data Analytics course, where I learned how to work with data to find useful
+                    insights and help make better decisions. My key skills include: <br>
+                    <br>
+                    • Programming & Libraries: Python, NumPy, Pandas, Matplotlib, Seaborn, Plotly <br>
+                    • Databases: MySQL <br>
+                    • Data Visualization: Power BI, Tableau <br>
+                    • Spreadsheets: Excel, Power Query <br>
+                    • Data Analysis & Cleaning: Cleaning and organizing data, basic statistics <br>
+                    <br>
+                    I enjoy using data to solve problems and make processes more efficient. I’m excited to apply these
+                    skills in real-world projects and collaborate with others to achieve results.
+                </p>
+
+            </div>
+        </section>
+
+        <script>
+            // JavaScript to toggle more information
+            document.getElementById("toggle-btn").addEventListener("click", function () {
+                let moreInfo = document.getElementById("more-info");
+                let btnText = this;
+
+                if (moreInfo.style.display === "none") {
+                    moreInfo.style.display = "block";
+                    btnText.innerText = "Show Less";
+                } else {
+                    moreInfo.style.display = "none";
+                    btnText.innerText = "Show More";
+                }
+            });
+        </script>
+
+        <hr style="margin-top: 150px;" id="experience">
+        <section class="secondsection">
+            <h1>Experience</h1>
+            <div class="box">
+                <img class="bullet-first" src="bullet.png" alt="">
+                <div class="vertical">
+
+                    <div class=" vertical-title">
+                        Advance Excel
+                    </div>
+                    <div class="vertical-desc">
+                        <spam calss='with' style="color: purple; font-size: clamp(6px, 1vw, 11px);">With</spam> Skil
+                        Course
+                    </div>
+                    <a href="Excel certificate.pdf" target="_blank" style="text-decoration: none" ;>
+                        <div class="certificate">
+                            <img class="view" src="icons8-view-24.png" alt="">
+                            certificate
+                        </div>
+                    </a>
+                </div>
+                <div class="vertical">
+
+                    <div class=" vertical-title">
+                        Dashboard in Excel
+                    </div>
+                    <div class="vertical-desc">
+                        <spam calss="with" style="color: purple; font-size: clamp(6px, 1vw, 11px);">With</spam> Skil
+                        Course
+                    </div>
+                    <a href="Excel dashboard certificates.pdf" target="_blank" style="text-decoration: none" ;>
+                        <div class="certificate">
+                            <img class="view" src="icons8-view-24.png" alt="">
+                            certificate
+                        </div>
+                    </a>
+                </div>
+                <div class="vertical">
+
+                    <div class=" vertical-title">
+                        Power Quary
+                    </div>
+                    <div class="vertical-desc">
+                        <spam calss='with' style="color: purple; font-size: clamp(6px, 1vw, 11px);">With</spam> Skil
+                        Course
+                    </div>
+                    <a href="Power Quary.pdf" target="_blank" style="text-decoration: none" ;>
+                        <div class="certificate">
+                            <img class="view" src="icons8-view-24.png" alt="">
+                            certificate
+                        </div>
+                    </a>
+                </div>
+                <div class="vertical">
+
+                    <div class=" vertical-title">
+                        Data Analytics
+                    </div>
+                    <div class="vertical-desc">
+                        <spam calss='with' style="color: purple; font-size: clamp(6px, 1vw, 11px);">With</spam> The
+                        iscale
+                    </div>
+                    <a href="icons8-call-50.png" target="_blank" style="text-decoration: none" ;>
+                        <div class="certificate">
+                            <img class="view" src="icons8-view-24.png" alt="">
+                            certificate
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <section class="projects" id="projects">
+            <h1>Projects</h1>
+            <div class="vert">
+                <img class="project-bullet" src="bullet.png" alt="">
+                <div class="hori">
+                    <div class="text">Python</div>
+                    <div class="project" data-index="0">
+                        <ul>
+                            <li>
+                                <a href="https://holly-films-yhnkpgnfpub8kcev7azb67.streamlit.app/" target="_blank"
+                                    data-index="0">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Movie Recommendation (Holly Films)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dash-sales-dashboard.onrender.com/" target="_blank" data-index="0">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Sales Dashboard in Dash
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/NishantSingh359/Python-Projects/blob/main/Web%20Image%20Scrapping-checkpoint.ipynb"
+                                    target="_blank" data-index="0">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Image Scrapping
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hori">
+                    <div class="text">SQL</div>
+                    <div class="project">
+
+                    </div>
+                </div>
+                <div class="hori">
+                    <div class="text">Tableau</div>
+                    <div class="project">
+                        <ul>
+                            <li>
+                                <a href="https://public.tableau.com/views/HRDashboard_17387467475020/HRDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                    target="_blank">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    HR Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://public.tableau.com/views/SalesDashboard_17387473025230/SalesDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                    target="_blank">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Sales Dashboard
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="hori">
+                    <div class="text">Power Bi</div>
+                    <div class="project">
+                        <ul>
+                            <li>
+                                <a href="https://1drv.ms/u/c/a68b464a3c86d3ff/EXUpmZkCRE1Oo5enbESVYOMBfPEnAZhyhecAQiLz0IbCxA?e=CL0jnB"
+                                    target="_blank">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Virat Kohli Performanc
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="hori">
+                    <div class="text">Excel</div>
+                    <div class="project">
+                        <ul>
+                            <li>
+                                <a href="https://1drv.ms/x/c/a68b464a3c86d3ff/EV_2InrN5OpFl5sSLidMI7ABQ2fR7TFURbjn9g8Bkjb6VA?e=BQHTLp"
+                                    target="_blank" class="exc">
+                                    <img class="p-bullet" src="bullet.png" alt="">
+                                    Online Sales
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------------CONTACT ME------------------>
+        <hr style="margin-top: 180px;">
+        <section class='contact-me' id="contactme">
+            <h1 class="subtitle"> Contact Me</h1>
+
+            <div class="contact-row">
+                <div class="contact-left">
+                    <div class="contact-icon">
+                        <a><img src="icons8-email-24.png" alt=""></a>
+                        <p>singhnishant414243@gmail.com</p>
+                    </div>
+                    <div class="contact-icon">
+                        <a><img src="icons8-call-50.png" alt="" style="height: 21px;"></a>
+                        <p>7084310497</p>
+                    </div>
+                    <div class="social-icon">
+                        <a href=""><img src="icons8-linkedin-48 (2).png" alt=""></a>
+                        <a href=""><img src="icons8-github-48.png" alt="" style="height: 36px;
+                            position: relative;
+                            top: -6px;"></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name " required>
+                        <input type="text" name="Email" placeholder="Your Email " required>
+                        <textarea name="Message" row="6" placeholder="Your Massage" style="height: 150px;"> </textarea>
+                        <button type="submit" class="contact-btn "> Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ["Data Analytics"],
+            typeSpeed: 50,
+        });
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzWvotmTKAraqhUgZz7i4nOP8CDiIDLSoplQtL8hJo8vdy978pvOuUVWNgQYvWe-AdW/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Massage Sent"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const verticalLines = document.querySelectorAll(".vertical");
+            const experienceSection = document.getElementById("experience");
+
+            function checkScroll() {
+                const sectionTop = experienceSection.getBoundingClientRect().top;
+                const sectionBottom = experienceSection.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop < windowHeight && sectionBottom > 0) {
+                    // Animate vertical lines to full height
+                    verticalLines.forEach(line => {
+                        line.style.height = "130px"; // Adjust height as needed
+                    });
+                } else {
+                    // Hide vertical lines when out of view
+                    verticalLines.forEach(line => {
+                        line.style.height = "0";
+                    });
+                }
+            }
+
+            window.addEventListener("scroll", checkScroll);
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const horizontalLines = document.querySelectorAll(".hori");
+
+            function checkScroll() {
+                horizontalLines.forEach((line, index) => {
+                    const lineTop = line.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (lineTop < windowHeight * 0.8) {  // Triggers when 80% in view
+                        setTimeout(() => {
+                            line.style.width = "clamp(130px, 15vw, 160px)"; // Adjust width as needed
+                        }, index * 300); // Delay increases for each line
+                    } else {
+                        line.style.width = "0"; // Reset when out of view
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+        });
+    </script>
+
+</body>
+
+</html>

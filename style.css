@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(0, 0, 33);
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure it stays above other elements */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(2, 2, 49);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: clamp(10px, 3vw, 23px);
+    font-size: clamp(.5rem, 2vw, 1rem);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+nav ul li a::after{
+    content: " ";
+    width: 0 ;
+    height: 3px;
+    background: purple;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+nav ul li a:hover {
+
+    color: rgb(187, 187, 187);
+}
+
+main hr {
+    border: 0;
+    background: #373379;
+    height: 1.3px;
+    margin: 20px clamp(1rem, 3vw, 1.5rem);
+}
+
+.left {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+/* --------------------main body--------------------------*/
+.firstsection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 60px 0;
+
+}
+
+.firstsection>Div {
+    width: 35%;
+}
+
+.leftsection {
+    font-size: clamp(.8rem, 3vw, 2rem);
+    margin: 70px 0;
+
+}
+
+.leftsection .btn {
+    position: relative;
+    display: inline-flex;
+    font-size: clamp(.2rem, 2vw, .9rem);
+    font-weight: 500;
+    padding: clamp(.2rem,1vw,.4rem) clamp(.2rem, 1vw, .7rem);
+
+    border-radius: 5px;
+    border-color: purple;
+    border-style: double;
+    color: rgb(0, 0, 33);
+    background-color: purple;
+    margin-top: 9px;
+    z-index: 1;
+    overflow: hidden;
+    transition: 1s;
+}
+.leftsection .btn:hover{
+    color: purple;
+}
+.leftsection .btn-a .btn{
+    background: transparent;
+    color: purple
+}
+.leftsection .btn-a .btn:hover{
+    color:rgb(0, 0, 33)
+}
+.leftsection .btn-a .btn::before{
+    background: purple;
+}
+.leftsection .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(0, 0, 33);
+    transition: 1s;
+    z-index: -1;
+}
+.leftsection .btn:hover::before {
+    width: 100%;
+    
+}
+.rightsection {
+    margin: 50px 0;
+}
+
+.name {
+    color: purple;
+    font-size: clamp(1rem, 3vw, 2rem);
+
+}
+
+#element {
+    color: purple;
+    font-size: clamp(1.07rem, 3vw, 2.6rem);
+    font-weight: 500;
+}
+
+/* About section ____________________________________________ */
+/*thied container*/
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+    padding-top: 150px;
+}
+
+.about-img img {
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 10px;
+    position: relative;
+    top: -14px;
+    border: .15rem solid rgb(143, 143, 223);
+    border-top-color: purple;
+    border-left-color: purple;
+    border-bottom-color: purple;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-text .p{
+    font-size: clamp(.9em, 2vw, 1.1rem);
+}
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.about-container .show-button {
+    background-color: #eff3f100;
+    color: purple;
+    border-color: #fdfdfd00;
+    font-size: clamp(11px, 2vw, 14px);
+}
+
+.about-more {
+    display: none;
+
+    margin-left: clamp(0px, 15vw, 200px);
+    font-size: clamp(11px, 2vw, 13px);
+    padding: 10px;
+    max-width: 540px;
+}
+
+.secondsection {
+    max-width: 80vw;
+    margin: auto;
+    margin-bottom: 440px;
+}
+
+.secondsection h1 {
+    margin-top: 0px;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 500;
+}
+
+.secondsection .box {
+    background: white;
+    width: 66vw;
+    height: 1px;
+    margin: 20px 0;
+    display: flex;
+    margin-left: 50px;
+}
+
+.secondsection .vertical {
+    height: 130px;
+    width: 1px;
+    background-color: white;
+    /* margin-right: 150px; */
+    margin-left: clamp(10px, 14vw, 170px);
+    position: relative;
+    left: -23px;
+    margin-top: 30px;
+    margin-right: 10px;
+    transition: height 1s ease-in-out;
+    transform-origin: 1s;
+}
+.bullet-first {
+    position: relative;
+    height:10px;
+    width: 10px;
+    left: -7px;
+    top: -4px;
+}
+
+.vertical-title {
+    position: relative;
+    font-size: clamp(9px, 2vw, 16px);
+    top: 160px;
+    left: -6px;
+    color: rgb(219, 218, 218);
+}
+.vertical-title:hover{
+    transform: translateY(-5px);
+    transition: .2s;
+}
+.vertical-desc {
+    position: relative;
+    font-size: clamp(7px, 1.1vw, 13px);
+    width: clamp(70px,10vw,123px);
+    top: 160px;
+    left: -23px;
+    color: rgb(182, 180, 180);
+    
+}
+
+.certificate {
+    font-size: clamp(7px, 1vw, 12px);
+    display: flex;
+    position: relative;
+    top: 159px;
+    gap: clamp(2px, 1vw, 4px);
+    color: #b1adad;
+    left: clamp(-23px, 2vw, -12px);
+}
+.certificate:hover{
+    color: purple;
+    transition: .3s;
+}
+.view {
+    height: clamp(7px, 1.5vw, 12px);
+    width: clamp(7px, 1.5vw, 12px);
+    position: relative;
+    top: 4px;
+}
+/* Projects______________________________*/
+
+.projects {
+    max-width: 80vw;
+    margin: auto;
+}
+.projects h1 {
+    margin-top: 0px;
+    font-size: clamp(1rem,2vw,1.4rem);
+    font-weight: 500;
+}
+.projects .vert {
+    display: flow;
+    background-color: white;
+    height: 1120px;
+    width: 1px;
+    margin: 20px 0px;
+    margin-left: 29px;
+}
+.projects .hori {
+    position: relative;
+    /*width: clamp(130px, 15vw, 160px);*/
+    background-color: white;
+    height: 1px;
+    margin-bottom: 210px;
+    margin-left: 20px;
+    top: 49px;
+    transition: width 1s ease-in-out;
+    
+}
+.project-bullet {
+    top: -14px;
+    left: -5px;
+    height: 10px;
+    width: 10px;
+    position: relative;
+}
+.projects .text {
+    position: relative;
+    top: -12px;
+    left: clamp(140px, 15vw, 170px);
+    color: purple;
+}
+.projects .text:hover{
+    transform: translateX(7px);
+    transition: .5s;
+}
+.project {
+    display: flow;
+}
+.projects .p-bullet {
+    height: 10px;
+    width: 10px;
+}
+.projects ul {
+    margin-left: 30px;
+    width: clamp(200px, 55vw, 400px);
+}
+.projects ul li {
+    list-style: none;
+    margin: 15px 0px;
+}
+
+.projects ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(.8rem, 2vw, 1rem);
+   
+}
+
+.projects ul li a:hover {
+
+    color: rgb(143, 143, 223);
+}
+
+
+.contact-me{
+    max-width: 80vw;
+    margin: auto;
+    height: 700px;
+}
+
+.contact-me h1 {
+    margin-top: 0px;
+    font-size: clamp(1rem,2vw,1.4rem);
+    font-weight: 500;
+}
+.contact-row {
+    margin: 35px;
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+.contact-icon {
+    display: flex;
+    gap: 10px;
+}
+.social-icon {
+    margin-top: 15px;
+} 
+.social-icon :hover{
+    transform: translateY(-5px);
+}
+.contact-icon p {
+    color: rgb(207, 207, 207);
+    font-size: clamp(.9rem, 1vw, 1rem);
+}
+.contact-right {
+    flex-basis: 65%;
+    padding-top: 25px;
+}
+.contact-right from{
+    width: 100%;
+}
+form input, form textarea {
+    width: 90%;
+    border: 0;
+    outline: none;
+    background: rgb(184, 180, 180);
+    padding: 13px;
+    margin-bottom: 27px;
+    color: #d1c3c3;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: rgb(13 15 60);
+
+}
+form input:focus {
+    background: rgb(13, 15, 60); /* Keeps the background when typing */
+    color: white;
+    box-shadow: 0 0 5px rgb(13, 15, 60) inset;
+}
+form input:-webkit-autofill {
+    background-color: rgb(13, 15, 60) !important;
+    color: white !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(13, 15, 60) inset !important;
+}
+
+.contact-btn {
+    background-color: rgb(13 15 60);
+    height: 32px;
+    width: 93px;
+    border-radius: 8px;
+    color: #898282;
+    border: none;
+}
+.contact-btn:hover{
+    background-color: purple;
+    
+}
+/*--------------css for small screen -----------*/
+@media only screen and (max-width: 600px){
+    
+}
+#msg{
+    color: purple;
+    margin-top: 17px;
+    display: block;
+}
