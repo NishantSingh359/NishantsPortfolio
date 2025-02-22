@@ -1,3 +1,5 @@
 # NishantsPortfolio
 ---
-![Screenshot (41)](https://github.com/user-attachments/assets/e1e81245-50b1-4b2f-b1e6-ab25dae204c8)
+
+![Portfolio](https://github.com/user-attachments/assets/cadbffef-24a0-4abf-aa59-104aca7f5845)
+
