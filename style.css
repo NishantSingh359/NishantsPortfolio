@@ -228,7 +228,7 @@ main hr {
 }
 .about-container .show-button {
     background-color: #eff3f100;
-    color: purple;
+    color: #040497;
     border-color: #fdfdfd00;
     font-size: clamp(11px, 2vw, 14px);
 }
