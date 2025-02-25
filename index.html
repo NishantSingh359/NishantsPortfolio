@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <link rel="icon"  href="png/logo.png" >
-    
+    <link rel="icon" href="png/logo.png" sizes="32x32">
+
     git add .
     git commit -m "Updated favicon for the website"
     git push origin main
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nishant Singh</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="animation.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -60,26 +60,87 @@
             </div>
 
         </section>
-        <hr>
-        <section id="about">
-            <div class="about-container">
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const zoomSection = document.querySelector(".rightsection");
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                zoomSection.classList.add("visible"); // Zoom in
+                            } else {
+                                zoomSection.classList.remove("visible"); // Zoom out
+                            }
+                        });
+                    },
+                    { threshold: 0.5 } // Trigger when 50% of the section is visible
+                );
+
+                observer.observe(zoomSection);
+            });
+        </script>
+            
+        
+
+        
+        <section style="background-color: #030336b0;   
+            padding-bottom: 150px; margin: 0 23px;
+            border-radius: 10px; " class = "about-section" id="about">
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const zoomSection = document.querySelector(".about-section");
+
+                    const observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    zoomSection.classList.add("visible"); // Zoom in
+                                } else {
+                                    zoomSection.classList.remove("visible"); // Zoom out
+                                }
+                            });
+                        },
+                        { threshold: 0.5 } // Trigger when 50% of the section is visible
+                    );
+
+                    observer.observe(zoomSection);
+                });
+            </script>
+            <div class="about-container" id="about-section">
                 <div class="about-img">
                     <img src="https://avatars.githubusercontent.com/u/180900384?v=4" alt="Nishant Singh">
                 </div>
                 <div class="about-text">
-                    <h2 style="font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 500;
-                    ">Nishant Singh</h2>
+                    <h2 style="font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 500;">Nishant Singh</h2>
                     <p class="p">Data Analytics | And Enjoy Web Development</p>
                     <p class="p">Python | MySQL | Excel | Tableau | Power BI</p>
-                    <p style="font-style: italic; font-size: clamp(11px, 2vw, 14px);">When I’m not coding, I explore
-                        Startups, and read
-                        Daily Business News.</p>
-
-
-                    <!-- Show More / Show Less Button -->
+                    <p style="font-style: italic; font-size: clamp(9px, 2vw, 14px);">
+                        When I’m not coding, I explore Startups, and read Daily Business News.
+                    </p>
                     <button id="toggle-btn" class="show-button">Show More</button>
                 </div>
             </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const aboutSection = document.querySelector(".about-text");
+
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                aboutSection.classList.add("animate");
+                            } else {
+                                aboutSection.classList.remove("animate"); // Remove class when out of view
+                            }
+                        });
+                    }, { threshold: 0.3 });
+
+                    observer.observe(document.querySelector("#about-section"));
+                });
+
+            </script>
 
             <!-- Hidden Content -->
             <div id="more-info" class="about-more">
@@ -101,6 +162,25 @@
             </div>
         </section>
 
+        <!--for animation------------------>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const aboutSection = document.querySelector(".about-more");
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            aboutSection.classList.add("animate");
+                        } else {
+                            aboutSection.classList.remove("animate"); // Remove class when out of view
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                observer.observe(document.querySelector("#more-info"));
+            });
+
+        </script>
         <script>
             // JavaScript to toggle more information
             document.getElementById("toggle-btn").addEventListener("click", function () {
@@ -116,9 +196,31 @@
                 }
             });
         </script>
+        
 
-        <hr style="margin-top: 150px;" id="experience">
-        <section class="secondsection">
+       
+        <section class="secondsection" id="experience">
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const zoomSection = document.querySelector(".secondsection");
+
+                    const observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    zoomSection.classList.add("visible"); // Zoom in
+                                } else {
+                                    zoomSection.classList.remove("visible"); // Zoom out
+                                }
+                            });
+                        },
+                        { threshold: 0.5 } // Trigger when 50% of the section is visible
+                    );
+
+                    observer.observe(zoomSection);
+                });
+            </script>
             <h1>Experience</h1>
             <div class="box">
                 <img class="bullet-first" src="png/bullet.png" alt="">
@@ -188,9 +290,47 @@
                 </div>
             </div>
         </section>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const projects = document.querySelectorAll(".vertical-title");
 
-        <hr>
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                        } else {
+                            entry.target.classList.remove("animate"); // Resets animation when out of view
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                projects.forEach(project => observer.observe(project));
+            });
+        </script>
+
+        
         <section class="projects" id="projects">
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const zoomSection = document.querySelector(".projects");
+
+                    const observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    zoomSection.classList.add("visible"); // Zoom in
+                                } else {
+                                    zoomSection.classList.remove("visible"); // Zoom out
+                                }
+                            });
+                        },
+                        { threshold: 0.3 } // Trigger when 50% of the section is visible
+                    );
+
+                    observer.observe(zoomSection);
+                });
+            </script>
             <h1>Projects</h1>
             <div class="vert">
                 <img class="project-bullet" src="png/bullet.png" alt="">
@@ -233,7 +373,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/NishantSingh359/Exploratory_Data_Analysis-EDA" target="_blank"
+                                <a href="https://github.com/NishantSingh359/SQL-Data-Warehouse" target="_blank"
                                     data-index="0">
                                     <img class="p-bullet" src="png/bullet.png" alt="">
                                     Exploratory Data Analysis
@@ -265,7 +405,7 @@
                     </div>
                 </div>
                 <div class="hori">
-                    <div class="text">Power BI</div>
+                    <div class="text">Power Bi</div>
                     <div class="project">
                         <ul>
                             <li>
@@ -295,25 +435,40 @@
                 </div>
             </div>
         </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const projects = document.querySelectorAll(".project");
 
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                        } else {
+                            entry.target.classList.remove("animate"); // Resets animation when out of view
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                projects.forEach(project => observer.observe(project));
+            });
+        </script>
         <!------------------CONTACT ME------------------>
-        <hr style="margin-top: 180px;">
         <section class='contact-me' id="contactme">
             <h1 class="subtitle"> Contact Me</h1>
 
             <div class="contact-row">
                 <div class="contact-left">
                     <div class="contact-icon">
-                        <a><img src="png/icons8-email-24.png" alt=""></a>
+                        <a><img srcpng/icons8-email-24.png" alt=""></a>
                         <p>singhnishant414243@gmail.com</p>
                     </div>
                     <div class="contact-icon">
                         <a><img src="png/icons8-call-50.png" alt="" style="height: 21px;"></a>
                         <p>7084310497</p>
                     </div>
-                    <div class="png/social-icon">
-                        <a href="https://www.linkedin.com/in/nishant-singh123/"><img src="png/icons8-linkedin-48 (2).png" alt=""></a>
-                        <a href="https://github.com/NishantSingh359"><img src="png/icons8-github-48.png" alt="" style="height: 36px;
+                    <div class="social-icon">
+                        <a href=""><img src="png/icons8-linkedin-48 (2).png" alt=""></a>
+                        <a href=""><img src="png/icons8-github-48.png" alt="" style="height: 36px;
                             position: relative;
                             top: -6px;"></a>
                     </div>
@@ -409,7 +564,28 @@
             window.addEventListener("scroll", checkScroll);
         });
     </script>
+     
+     
+    <script>
+        // smooth scrolling
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbarHeight = document.querySelector("nav").offsetHeight; // Adjust based on your navbar height
+            const links = document.querySelectorAll("nav a");
 
+            links.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default jump
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        const targetPosition = targetSection.offsetTop - navbarHeight - 20; // Offset to avoid overlap
+                        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
