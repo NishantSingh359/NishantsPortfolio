@@ -193,10 +193,10 @@ main hr {
     margin-left: 10px;
     position: relative;
     top: -14px;
-    border: .25rem solid rgb(143, 143, 223);
-    border-top-color: purple;
-    border-left-color: purple;
-    border-bottom-color: purple;
+    border: .25rem solid rgb(2, 2, 43);
+    border-top-color: #040463;
+    border-left-color: #040463;
+    border-bottom-color: #040463;
 }
 
 .about-text {
@@ -327,7 +327,7 @@ main hr {
     font-size: clamp(9px, 2vw, 16px);
     top: 160px;
     left: -6px;
-    color: rgb(219, 218, 218);
+    color: white;
 }
 .vertical-title:hover{
     transform: translateY(-5px);
@@ -339,7 +339,7 @@ main hr {
     width: clamp(70px,10vw,123px);
     top: 160px;
     left: -23px;
-    color: rgb(182, 180, 180);
+    color: #d9d9d9;
     
 }
 
@@ -349,7 +349,7 @@ main hr {
     position: relative;
     top: 159px;
     gap: clamp(2px, 1vw, 4px);
-    color: #b1adad;
+    color: #d9d9d9;
     left: clamp(-23px, 2vw, -12px);
 }
 .certificate:hover{
