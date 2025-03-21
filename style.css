@@ -220,11 +220,13 @@ nav ul li a.active::after {
     color: purple;
     width: 100%;
 }
-@media(max-width: 1500px) {
-nav ul li a:hover::after {
-    width: 0% !important;
+
+@media screen and (min-width: 1200px) {
+    nav ul li a:hover::after {
+        width: 0% !important;
+    }
 }
-}
+
 @media screen and (min-width: 601px) {
     #menubutton {
         display: none;
@@ -428,7 +430,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     overflow: hidden;
-    height: 720px;
+    height: 100dvh;
     align-items: center;
     gap: clamp(80px, 5vw, 120px);
     justify-content: center;
@@ -703,7 +705,7 @@ nav ul li a:hover::after {
 
 .scroll-name {
     color: #a5a5a5;
-    font-weight: 100;
+    font-weight: 300;
     width: 100%;
     height: auto;
     font-size: 80px;
@@ -1768,57 +1770,4 @@ nav ul li a:hover::after {
 .s-icon .fa-brands {
     font-size: 30px;
     color: purple;
-}
-
-/*==============*/
-.fixed_footer {
-    z-index: -1;
-    position: relative;
-}
-
-/*.content {
-    padding: 0px 70px;
-}*/
-
-.content_inner {
-    width: 90%;
-    margin: 40px 40px 420px 40px;
-    padding: 100px;
-}
-
-.copy {
-    background: #e9e6dc;
-    border: 1px solid #2e2e27;
-    border-radius: 40px;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
-.fotter-col li {
-    list-style: none;
-    font-family: "poppins" sans-serif;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    letter-spacing: 0.1px;
-    line-height: 30px;
-    color: #dbdbdb;
-}
-
-.footer-col li:first-child {
-    font-weight: bolder;
-}
-
-.copyright {
-    display: flex;
-    justify-content: space-between;
-    font-family: "Monument Extended";
-    text-transform: uppercase;
-    font-size: 0.8em;
-    letter-spacing: 0.1px;
-    line-height: 30px;
-    opacity: 0.5;
-    margin: 6em 0 0 0;
 }
