@@ -361,38 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(zoomSection);
 });
-/*
-// ========== PROJECT SECTION HORIZONTAL LINE ANIMATION
- 
-document.addEventListener("DOMContentLoaded", function () {
-    const horizontalLines = document.querySelectorAll(".hori");
- 
-    function checkScroll() {
-        horizontalLines.forEach((line, index) => {
-            const lineTop = line.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
- 
-            if (lineTop < windowHeight * 0.8) {  // Triggers when 80% in view
-                setTimeout(() => {
-                    line.style.width = "clamp(130px, 15vw, 160px)"; // Adjust width as needed
-                }, index * 300); // Delay increases for each line
-            } else {
-                line.style.width = "0"; // Reset when out of view
-            }
-        });
-    }
- 
-    window.addEventListener("scroll", checkScroll);
-});
-*/
-/*document.querySelectorAll('.projects a').forEach(link => {
-    link.addEventListener('mouseover', () => {
-        link.closest('.projects').querySelector('.info-box').style.height = '241px';
-    });
-    link.addEventListener('mouseout', () => {
-        link.closest('.projects').querySelector('.info-box').style.height = '';
-    });
-});*/
 // ========== PROJECT SECTION TEXT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
