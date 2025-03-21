@@ -220,11 +220,11 @@ nav ul li a.active::after {
     color: purple;
     width: 100%;
 }
-
+@media(max-width: 1500px) {
 nav ul li a:hover::after {
     width: 0% !important;
 }
-
+}
 @media screen and (min-width: 601px) {
     #menubutton {
         display: none;
