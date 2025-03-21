@@ -367,7 +367,6 @@ nav ul li a.active::after {
         display: flex;
         flex-direction: column-reverse;
         gap: 0px;
-        height: 910px !important;
     }
 
     .firstsection>Div {
