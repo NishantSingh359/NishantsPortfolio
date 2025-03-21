@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/180900384?v=4" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--image hove -->
+    <script src=" https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--footer-->
+    <!--<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--
+        .poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!--
+    // <weight>: Use a value from 300 to 700
+        // <uniquifier>: Use a unique and descriptive class name
+
+            .quicksand-<uniquifier> {
+                font-family: "Quicksand", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: <weight>;
+                    font-style: normal;
+                    }
+                -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <!--    
+        .m-plus-rounded-1c-regular {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+            }
+                -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!--
+    .great-vibes-regular {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <!--
+    .belleza-regular {
+        font-family: "Belleza", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    -->
+    <script src="https://kit.fontawesome.com/3b6428a720.js" crossorigin="anonymous"></script>
+    <!--------- ICON SCRIPT --------->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<div class="intro">
+    <div class="logo-header">
+        <span class="logo">Nishant's</span>
+        <span class="logo">
+            <span class="logo1">
+                Portfolio.
+            </span>
+        </span>
+    </div>
+</div>
+<script src="animation.js"></script>
+<main class="hidden">
+
+    <head>
+        <nav>
+            <div class="left">
+                <button class="hover-logo" area-label="Hover Me">
+                    <span area-hidden="true">
+                        <span>Nishant's<span>Nishant's</span></span>
+                        <span style=" color: purple;">Portfolio <span style=" color: purple;">Portfolio</span></span>
+                    </span>
+                </button>
+            </div>
+            <div class="right">
+                <ul class="nav-bar" id="sidemenu">
+                    <li><a href="#home" onclick="toggleMenu()" class="hover-this"><span>Home</span></a></li>
+                    <li><a href="#about" onclick="toggleMenu()" class="hover-this"><span>About</span></a></li>
+                    <li><a href="#experience" onclick="toggleMenu()" class="hover-this"><span>Experience</span></a></li>
+                    <li><a href="#skill" onclick="toggleMenu()" class="hover-this"><span>Skill</span></a></li>
+                    <li><a href="#projects" onclick="toggleMenu()" class="hover-this"><span>Projects</span></a></li>
+                    <li><a href="#contactme" onclick="toggleMenu()" class="hover-this"><span>Contact me</span> </a></li>
+                    <div class="cursor"></div>
+                </ul>
+                <div id="menubutton" onclick="toggleMenu()">
+                    <div class="fa-solid fa-bar" id="menuicon">
+                        <div class="bline one"></div>
+                        <div class="bline two"></div>
+                        <div class="bline three"></div>
+                    </div>
+                    <!--<div class="fa-solid fa-xmar" onclick="closemenu()" id="closeicon">
+                        <div class="xline one"></div>
+                        <div class="xline two"></div>
+                        <div class="xline three"></div>
+                    </div>-->
+                </div>
+            </div>
+        </nav>
+        <script>
+            window.addEventListener("scroll", function () {
+                let navbar = document.querySelector("nav");
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+        </script>
+        <!--- FOR NAV BAR COOL IFFECT --->
+        <script>
+            (function () {
+                const links = document.querySelectorAll('.nav-bar li');
+                const cursor = document.querySelector('.cursor');
+
+                const animateIt = function (e) {
+                    const span = this.querySelector('span');
+                    const { offsetX: x, offsetY: y } = e,
+                        { offsetWidth: width, offsetHeight: height } = this,
+                        move = 25,
+                        xMove = (x / width) * (move * 2) - move,
+                        yMove = (y / height) * (move * 2) - move;
+
+                    span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+                    if (e.type === 'mouseleave') span.style.transform = '';
+                };
+
+                const editCursor = (e) => {
+                    const { clientX: x, clientY: y } = e;
+                    cursor.style.left = `${x}px`;
+                    cursor.style.top = `${y}px`;
+                };
+
+                links.forEach(link => {
+                    link.addEventListener('mousemove', animateIt);
+                    link.addEventListener('mouseleave', animateIt);
+                });
+
+                window.addEventListener('mousemove', editCursor);
+            })();
+        </script>
+    </head>
+
+    <!----------- NAV BAR MENUE ----------->
+    <script>
+        var sidemen = document.getElementById("sidemenu");
+        var menuButton = document.getElementById("menubutton");
+
+        function toggleMenu() {
+            sidemen.classList.toggle("active");
+            menuButton.classList.toggle("active");
+            sidemen.style.right = sidemen.classList.contains("active") ? "10px" : "-200px";
+        }
+
+        // Close menu when clicking on any link inside
+        document.querySelectorAll("#sidemenu a").forEach(link => {
+            link.addEventListener("click", toggleMenu);
+        });
+    </script>
+    <section id="home" class="firstsection">
+        <div class="leftsection">
+            <div class='left-hole'>
+                <div class="l-text">
+                    Hi, I'm <spam class='name'>Nishant Singh</spam>
+                </div>
+                <div class="l-text">I am a passionate</div>
+                <div class="l-text"><span id="element"></span></div>
+                <div class="l-text">
+                    <div class="buttons">
+                        <button href="/" class="btn">Resume</button>
+                        <a class="btn-a" href="https://github.com/NishantSingh359/NishantSingh359" target="_blank">
+                            <button class="btn">Git Hub</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightsection">
+            <div class="loader">
+                <div class="ringOne ring">
+                    <img src="img/w-img/ring.png" alt="">
+                </div>
+                <div class="ringTwo ring">
+                    <!--<img src="img/w-img/ring.png" alt="">-->
+                </div>
+            </div>
+        </div>
+        <script>
+            var windowWidth = $(window).width();
+            $('.rightsection').mousemove(function (event) {
+                var moveX = (($(window).width() / 2) - event.pageX) * 0.1;
+                var moveY = (($(window).height() / 2) - event.pageY) * 0.1;
+                $('.ring').css('margin-left', moveX + 'px');
+                $('.ring').css('margin-top', moveY + 'px');
+            });
+        </script>
+        <script>
+            var textWrapper = document.querySelector('.ml7 .letters');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({ loop: false })
+                .add({
+                    targets: '.ml7 .letter',
+                    translateY: ["1.1em", 0],
+                    translateX: ["0.55em", 0],
+                    translateZ: 0,
+                    rotateZ: [180, 0],
+                    duration: 750,
+                    easing: "easeOutExpo",
+                    delay: function (el, i) {
+                        return 9000 + 50 * i;
+                    }
+                });
+        </script>
+    </section>
+    <!----------------------- ABOUT SECTION ----------------------->
+
+    <section class="about-section" id="about">
+        <div class="about-container" id="about-section">
+            <div class="about-img">
+                <img src="https://avatars.githubusercontent.com/u/180900384?v=4" alt="Nishant Singh">
+            </div>
+            <div class="about-text">
+                <h2 class="about-name">Nishant Singh</h2>
+                <p>Data Analytics | Enjoy Web Development</p>
+                <p>Python | MySQL | Excel | Tableau | Power BI</p>
+                <p class = "italic">When I’m not in coding, I explore Startups, and watch Daily Business News.</p>
+                <button id="toggle-btn" class="show-button">Show More</button>
+            </div>
+        </div>
+        <div class="scrolling-name">
+            <div class="scroll-name">
+                Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh
+            </div>
+        </div>
+        <!-- Hidden Content -->
+        <div id="more-info" class="about-more">
+            <div class="data-analytics">
+                <div style="display: flex; align-items: center;">
+                    <div class=" data-analytics-text">
+                        Data <br>
+                        Analytics
+                    </div>
+                    <div class="ver" style="left: 15px"></div>
+                </div>
+                <div class="data-analytics-info">
+                    I enjoy using data to solve problems and make processes more efficient. I’m excited to apply
+                    these
+                    skills in real-world projects and collaborate with others to achieve results.
+                </div>
+
+            </div>
+            <div class="business">
+                <div class="business-info">
+                    I recently completed a Data Analytics course, where I learned how to work with data to find
+                    useful
+                    insights and help make better decisions.
+                </div>
+                <div class="busi-head" style="display: flex; align-items: center;">
+                    <div class="ver" style="right: 15px"></div>
+                    <div class="business-text">
+                        Exploring <br>
+                        Startups
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp">
+                <div class="explore-hori"></div>
+                <div class="explore">
+                    Let's <br>
+                    explore some thing new
+                </div>
+            </div>
+        </div>
+        <script>
+            // JavaScript to toggle more information
+            document.getElementById("toggle-btn").addEventListener("click", function () {
+                let moreInfo = document.getElementById("more-info");
+                let btnText = this;
+
+                if (moreInfo.style.display === "none") {
+                    moreInfo.style.display = "block";
+                    btnText.innerText = "Show Less";
+                } else {
+                    moreInfo.style.display = "none";
+                    btnText.innerText = "Show More";
+                }
+            });
+        </script>
+        <script>
+            let lastScrollY = window.scrollY;
+            let scrollDirection = "right"; // Default direction
+            let isScrolling = false;
+            let autoScrollInterval;
+            let currentX = 0; // Track current position
+
+            function startAutoScroll(direction) {
+                clearInterval(autoScrollInterval); // Stop any previous auto-scroll
+
+                const scrollContainer = document.querySelector('.scroll-name');
+                let speed = 2; // Adjust speed as needed
+
+                autoScrollInterval = setInterval(() => {
+                    if (direction === "right") {
+                        currentX -= speed; // Move left
+                    } else {
+                        currentX += speed; // Move right
+                    }
+                    scrollContainer.style.transform = `translateX(${currentX}px)`;
+                }, 20); // Adjust interval for smooth animation
+            }
+
+            document.addEventListener('scroll', function () {
+                clearInterval(autoScrollInterval); // Stop auto-scroll when user scrolls
+                isScrolling = true;
+                const scrollContainer = document.querySelector('.scroll-name');
+                const scrollY = window.scrollY;
+                const containerWidth = scrollContainer.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                const maxScroll = containerWidth - viewportWidth;
+
+                const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
+                const speedMultiplier = 2;
+                let translateX = -scrollProgress * maxScroll * speedMultiplier;
+
+                // Preserve the existing position instead of resetting
+                let newPosition = currentX + (translateX - currentX) * 0.1; // Smooth transition
+                scrollContainer.style.transform = `translateX(${newPosition}px)`;
+                currentX = newPosition; // Update current position
+
+                // Detect scroll direction
+                if (scrollY > lastScrollY) {
+                    scrollDirection = "right"; // Scrolling down, move left
+                } else {
+                    scrollDirection = "left"; // Scrolling up, move right
+                }
+                lastScrollY = scrollY;
+
+                // Detect when scrolling stops and resume auto animation
+                clearTimeout(window.scrollEndTimer);
+                window.scrollEndTimer = setTimeout(() => {
+                    isScrolling = false;
+                    startAutoScroll(scrollDirection);
+                }); // Delay before auto-scroll resumes
+            });
+
+            // Start the auto-scroll when the page loads
+            window.onload = function () {
+                startAutoScroll(scrollDirection);
+            };
+        </script>
+
+    </section>
+
+    <!----------------------- EXPERIENCE SECTION ----------------------->
+
+    <section class="secondsection" id="experience">
+        <script>
+        </script>
+        <h1 class="h1">Journey to become Data Analytics</h1>
+        <h1 class="h2">Journey to Data Analytics</h1>
+        <div class="journey">
+            <div class="course-exp">
+                <div class="box">
+                    <div class="vertical">
+                        <div class=" vertical-title">
+                            Advance Excel
+                        </div>
+                        <div class="vertical-desc">
+                            <spam class='with'>With</spam>
+                            <span>Skil Course</span>
+                        </div>
+                    </div>
+                    <div class="vertical">
+
+                        <div class=" vertical-title">
+                            Dashboard in Excel
+                        </div>
+                        <div class="vertical-desc">
+                            <spam class="with">With</spam>
+                            <span>Skil Course</span>
+                        </div>
+                    </div>
+                    <div class="vertical">
+
+                        <div class=" vertical-title">
+                            Power Quary
+                        </div>
+                        <div class="vertical-desc">
+                            <spam class='with'>With</spam>
+                            <span>Skil Course</span>
+                        </div>
+                    </div>
+                    <div class="vertical">
+                        <div class=" vertical-title">
+                            Data Analytics
+                        </div>
+                        <div class="vertical-desc">
+                            <spam class='with'>With</spam>
+                            <span>Skil Course</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="courseinfo">
+                <div class="about-course">
+                    <div class="aboutcourseinfo">
+                        <p> I started my journey with an Advanced Excel course, where I deep-dived into various concepts and learned many interesting things.
+                             This course gave me the best learning experience and motivated me to continue my journey in this field.
+                        </p>
+                        <a href="pdf/Excel certificate.pdf" target="_blank" style="text-decoration: none" ;>
+                            <i class="fa-solid fa-certificate"></i>
+                        </a>
+                    </div>
+                    <div class="aboutcourseinfo">
+                        <p> The Dashboard in Excel course taught me how to present data effectively using charts and identify the best visualization techniques.
+                             Designing dashboards was the most exciting part for me, and it strengthened my decision to move further in this field.
+                        </p>
+                        <a href="pdf/Excel dashboard certificates.pdf" target="_blank" style="text-decoration: none" ;>
+                            <i class="fa-solid fa-certificate"></i>
+                        </a>
+                    </div>
+                    <div class="aboutcourseinfo">
+                        <p> Through the Power Query course, I became familiar with ETL processes, data cleaning, and formatting. This was a completely different 
+                            experience, and following each step helped me gain clarity about pursuing Data Analytics.
+                        </p>
+                        <a href="pdf/Power Quary.pdf" target="_blank" style="text-decoration: none" ;>
+                            <i class="fa-solid fa-certificate"></i>
+                        </a>
+                    </div>
+                    <div class="aboutcourseinfo">
+                        <p> The Data Analytics course was more challenging compared to my previous courses. To complete it, I followed a structured approach.
+                             The best part was overcoming my biggest fear—coding. This course made me comfortable with programming and boosted my confidence.
+                        </p>
+                        <a href="///" target="_blank" style="text-decoration: none" ;>
+                            <i class="fa-solid fa-certificate"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('scroll', function () {
+                const scrollContainer = document.querySelector('.about-course');
+                const scrollY = window.scrollY;
+                const containerWidth = scrollContainer.scrollWidth; // Total width of all boxes
+                const viewportWidth = window.innerWidth; // Width of the visible viewport
+                const maxScroll = containerWidth - viewportWidth; // Maximum scrollable distance
+
+                // Calculate the scroll progress (0 to 1)
+                const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
+
+                // Increase the multiplier to make scrolling faster
+                const speedMultiplier = 2; // Adjust this value to control the speed
+                const translateX = -scrollProgress * maxScroll * speedMultiplier;
+
+                // Apply the transformation in real-time
+                scrollContainer.style.transform = `translateX(${translateX}px)`;
+            });
+        </script>
+    </section>
+    <!----------------------- SKILL SECTION ----------------------->
+
+    <section class="skills" id="skill">
+        <div class="tag-shape">
+            <div class="tag">
+                <div class="tag-box" style="align-items: center;">
+                    Every skill is <br>
+                    a new experience.
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="skill">
+                <h3> Programming & Libraries </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        Python
+                        <span class="skill-type"> basics</span>
+                    </div>
+                </div>
+                <div class="add-skills">
+                    <div class="type">
+                        Numpy
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+                    <div class="type">
+                        Pandas
+                        <span class="skill-type"> Experienced </span>
+                    </div>
+                    <div class="type">
+                        Matplotlib
+                        <span class="skill-type"> Intermediate </span>
+                    </div>
+                    <div class="type">
+                        Seaborn
+                        <span class="skill-type"> Intermediate </span>
+                    </div>
+                    <div class="type">
+                        Plotly
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+                    <div class="type">
+                        Dash
+                        <span class="skill-type"> basics</span>
+                    </div>
+                </div>
+                <h3> Databases </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        MySQL
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+
+                    <div class="type">
+                        Microsoft SQL Server
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+                </div>
+                <h3> Visualization </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        Power BI
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+
+                    <div class="type">
+                        Tableau
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+                </div>
+                <h3> Speadsheet & ETL </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        Excel
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+
+                    <div class="type">
+                        Power Query
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+                </div>
+                <h3> Analysis & Cleaning </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        Data Cleaning
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+
+                    <div class="type">
+                        Statistics
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+                </div>
+                <h3 style="padding-top: 10px;"> Soft Skills </h3>
+                <div class="add-skills">
+                    <div class="type">
+                        Critical Thinking
+                        <span class="skill-type"> Experienced</span>
+                    </div>
+
+                    <div class="type">
+                        Communication Skills
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+
+                    <div class="type">
+                        Storytelling with Data
+                        <span class="skill-type"> Intermediate</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------- PROJECT SECTION ----------------------->
+
+    <section class="projects" id="projects">
+        <h1>Projects</h1>
+        <div class="vert">
+            <div class="hori">
+                <div class="hori-head">
+                    <div class="hori-line"></div>
+                    <div class="text">Python</div>
+                </div>
+                <div class="catego">
+                    <div class="project" data-index="0">
+                        <ul>
+                            <li>
+                                <a href="https://holly-films-yhnkpgnfpub8kcev7azb67.streamlit.app/" target="_blank"
+                                    data-info="<h3 class='info-title'>Movie Recommendation</h3> 
+                                            <p class='info-description'>A system that recommends movies based on user preferences using Python & content-based filtering. 
+                                            And for designing and deployment using Streamlit Streamlit cloud.
+                                            <h4 class='info-skills''>Skills Use</h4>
+                                            <ul class='info-list'>Python, Pandas, Streamlit, CSS, HTML </ul>
+                                            <h7 class='info-note'
+                                            > click on project to view </h7>
+                                            " data-images="Holly Films.png" data-index="0">
+
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Movie<span>Movie</span></span>
+                                            <span>Recommendation<span>Recommendation</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dash-sales-dashboard.onrender.com/" target="_blank" data-info="<h3 class='info-title'>Sales Dahsboad</h3> 
+                                        <p class='info-description'>An interactive dashboard built with Plotly Dash to visualize and analyze sales data in real-time.</p>
+                                        <h4 class='info-skills'>Skills Use</h4>
+                                        <ul class='info-list'>Python, Pandas, NumPy, Plotly, Dash, HTML, CSS</ul>
+                                        <h7 class='info-note'>
+                                        click on project to view </h7>" data-images="Sales Dashboard All.png"
+                                    data-index="0">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Sales Dashboard<span>Sales Dashboard</span></span>
+                                            <span>in Dash<span>in Dash</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/NishantSingh359/Python-Projects/blob/main/Web%20Image%20Scrapping-checkpoint.ipynb"
+                                    target="_blank" data-info="<h3 class='info-title'>Image Scrapping</h3> 
+                                            <p class='info-description'> A Python script to automatically scrape images from websites for data collection.</p>
+                                            <h4 class='info-skills'>Skills Use</h4>
+                                            <ul class='info-list'>Python, Beautiful Soup</ul>
+                                            <h7 class='info-note'> click on project to view </h7>"
+                                    data-images="bullet.png" data-index="0">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Image<span>Image</span></span>
+                                            <span>Scrapping<span>Scrapping</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-text">Hover over a project to see details.</p>
+                        <img src="img/p-img/Holly Films.png" alt="Project Preview" class="info-image"
+                            data-images=" img/p-img/Holly Films.png, img/p-img/Holly Films1.png, img/p-img/Sales Dashboard All.png, img/p-img/image scrapping.png "
+                            data-index="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hori">
+                <div class="hori-head">
+                    <div class="hori-line"></div>
+                    <div class="text">SQL</div>
+                </div>
+                <div class="catego">
+                    <div class="project" data-index="0">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/NishantSingh359/SQL-Data-Warehouse" target="_blank"
+                                    data-info="<h3 class='info-title'>SQL Data Warehouse</h3> 
+                                            <p class='info-description'> Structured data management solution with fact & dimension tables for efficient analytics.</p>
+                                            <h4 class='info-skills'>Skills Use:</h4>
+                                            <ul class='info-list'>Microsoft SQL Server</ul>
+                                            <h7 class='info-note'>click on project to view</h7>"
+                                    data-images="bullet.png" data-index="0">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>SQL Data<span>SQL Data</span></span>
+                                            <span>Warehouse<span>Warehouse</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/NishantSingh359/SQL-Data-Warehouse" target="_blank"
+                                    data-info="<h3 class='info-title'>Exploratory Data Analysis</h3> 
+                                            <p class='info-description'>In-depth analysis of data using SQL queries to uncover trends and patterns.</p>
+                                            <h4 class='info-skills'>Skills Use:</h4>
+                                            <ul class='info-list'>Microsoft SQL Server </ul>
+                                            <h7 class='info-note'> click on project to view </h7>" data-index="0"
+                                    data-images="bullet.png">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Exploratory<span>Exploratory</span></span>
+                                            <span>Data Analysis<span>Data Analysis</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-text">Hover over a project to see details.</p>
+                        <img src="img/p-img/ETL -Data Architecture2.drawio.png" alt="Project Preview" class="info-image"
+                            data-images="img/p-img/ETL -Data Architecture2.drawio.png, img/p-img/Data Flow Diagram.jpg,img/p-img/Meadllion Architecture.jpg, img/p-img/Data Mart (Star Schema).jpg, img/p-img/Dimensions vs Facts.jpg,img/p-img/Data Modeling.jpg,img/p-img/Exploratory Data Analysis (EDA).png,img/p-img/Database Exploration.jpg,img/p-img/Dimensions Exploration.png,img/p-img/Date Exploration.png,img/p-img/Measure Exploration.png,img/p-img/Magnitude.png,img/p-img/Ranking.png "
+                            data-index="0">
+                    </div>
+                </div>
+            </div>
+            <div class="hori">
+                <div class="hori-head">
+                    <div class="hori-line"></div>
+                    <div class="text">Tableau</div>
+                </div>
+                <div class="catego">
+                    <div class="project" data-index="0">
+                        <ul>
+                            <li>
+                                <a href="https://public.tableau.com/views/HRDashboard_17387467475020/HRDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                    data-info="<h3 class='info-title'>HR Dashboard</h3> 
+                                        <p class='info-description'>Detailed Analysis of HR data and create dynamic and responsive dahsboard that present best inside and pattern of data. </p>
+                                        <h4 class='info-skills'>Skills Use:</h4>
+                                        <ul class='info-list'>Tableau</ul>
+                                        <h7 class='info-note'> click on project to view </h7>" target="_blank"
+                                    data-images="bullet.png">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>HR<span>HR</span></span>
+                                            <span>Dashboard<span>Dashboard</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://public.tableau.com/views/SalesDashboard_17387473025230/SalesDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                                    data-info="<h3 class='info-title'>Sales Dashboard</h3> 
+                                    <p class='info-description'> A dynamic dahsboards for Sales and Customers that present data using KPI's and interactive charts with detailed filtering of data </p>
+                                    <h4 class='info-skills'>Skills Use:</h4>
+                                    <ul class='info-list'>Tableau</ul>
+                                    <h7 class='info-note'> click on project to view </h7>" target="_blank"
+                                    data-images="bullet.png">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Sales<span>Sales</span></span>
+                                            <span>Dashboard<span>Dashboard</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-text">Hover over a project to see details.</p>
+                        <img src="img/p-img/HR Dashboard.png" alt="Project Preview" class="info-image"
+                            data-images="img/p-img/HR Dashboard.png, img/p-img/HR Dashboard Table.png, img/p-img/Sales Dashboard1.png, img/p-img/Sales Dashboard2.png "
+                            data-index="0">
+                    </div>
+                </div>
+            </div>
+            <div class="hori">
+                <div class="hori-head">
+                    <div class="hori-line"></div>
+                    <div class="text">PowerBi</div>
+                </div>
+                <div class="catego">
+                    <div class="project">
+                        <ul>
+                            <li>
+                                <a href="https://1drv.ms/u/c/a68b464a3c86d3ff/EXUpmZkCRE1Oo5enbESVYOMBfPEnAZhyhecAQiLz0IbCxA?e=CL0jnB"
+                                    data-info="<h3 class='info-title'>Virat Kohli Performanc</h3> 
+                                    <p class='info-description'> With year base filtering you can analyse every year in detailed. Also with Total & Avg. runs </p>
+                                    <h4 class='info-skills'>Skills Use:</h4>
+                                    <ul class='info-list'>Power Bi</ul>
+                                    <h7 class='info-note'> click on project to view </h7>" target="_blank"
+                                    data-images="bullet.png">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Virat Kohli<span>Virat Kohli</span></span>
+                                            <span>Performanc<span>Performanc</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-text">Hover over a project to see details.</p>
+                        <img src="img/p-img/virat kohli.png" alt="Project Preview" class="info-image"
+                            data-images="img/p-img/virat kohli.png, img/p-img/virat kohli2.png, img/p-img/virat kohli3.png "
+                            data-index="0">
+                    </div>
+                </div>
+            </div>
+            <div class="hori">
+                <div class="hori-head">
+                    <div class="hori-line"></div>
+                    <div class="text">Excel</div>
+                </div>
+                <div class="catego">
+                    <div class="project">
+                        <ul>
+                            <li>
+                                <a href="https://1drv.ms/x/c/a68b464a3c86d3ff/EV_2InrN5OpFl5sSLidMI7ABQ2fR7TFURbjn9g8Bkjb6VA?e=BQHTLp"
+                                    data-info="<h3 class='info-title'>Online Sales</h3> 
+                                        <p class='info-description'> A Online Shop sales analysis that seles our products multiple E-Commers platforms. With all and every plateform based filtering </p>
+                                        <h4 class='info-skills'>Skills Use:</h4>
+                                        <ul class='info-list'>Excel</ul>
+                                        <h7 class='info-note'> click on project to view </h7>" data-images="bullet.png"
+                                    target="_blank">
+                                    <button class="hover-link" area-label="Hover Me">
+                                        <span area-hidden="true">
+                                            <span>Online<span>Online</span></span>
+                                            <span>Sales<span>Sales</span></span>
+                                        </span>
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-text">Hover over a project to see details.</p>
+                        <img src="img/p-img/Excel Sales.png" alt="Project Preview" class="info-image"
+                            data-images="img/p-img/Excel Sales.png " data-index="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------CONTACT ME------------------>
+    <section class='contact-me' id="contactme">
+        <div class="contactme">
+            <div class="contact-left">
+                <div class="C-left">
+                    <div class="col" onclick="toggleInfo('address')">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="title">Address</div>
+                        <div class="text info" id="address">India U.P. Unnao</div>
+                    </div>
+                    <div class="col" onclick="toggleInfo('email')">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="title">Email</div>
+                        <div class="text info" id="email">singhnishant414243@gmail.com</div>
+                    </div>
+                    <div class="col" onclick="toggleInfo('call')">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="title">Call</div>
+                        <div class="text info" id="call"> +917084310497</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-mid"></div>
+            <div class="contact-right">
+                <h1 class="subtitle"> Let's start a project together</h1>
+                <div class="social-icon">
+                    <div class="s-icon">
+                        <a href="https://www.linkedin.com/in/nishant-singh123"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/NishantSingh359"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script>
+            let currentInfo = null;
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Ensure all info elements start hidden with proper visibility
+                document.querySelectorAll(".text.info").forEach(info => {
+                    info.style.visibility = "hidden";
+                    info.classList.add("hide");
+                });
+            });
+
+            function toggleInfo(id) {
+                const info = document.getElementById(id);
+
+                if (currentInfo === info) {
+                    hideInfo(info);
+                    currentInfo = null;
+                } else {
+                    if (currentInfo) {
+                        hideInfo(currentInfo, () => {
+                            showInfo(info);
+                        });
+                    } else {
+                        showInfo(info);
+                    }
+                    currentInfo = info;
+                }
+            }
+
+            function showInfo(info) {
+                info.style.visibility = "visible";
+                info.classList.remove("hide");
+                info.classList.add("show");
+            }
+
+            function hideInfo(info, callback) {
+                info.classList.remove("show");
+                info.classList.add("hide");
+                setTimeout(() => {
+                    info.style.visibility = "hidden";
+                    if (callback) callback();
+                }, 300); // Adjust timing to match CSS animation duration if needed
+            }
+
+
+        </script>
+    </section>
+
+    <!------------------SCRIPTS------------------>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ["Data Analytics"],
+            typeSpeed: 50,
+            startDelay: 3500 // Delay animation start by 2 seconds
+        });
+    </script>
+    <script>
+        document.addEventListener('copy', function (event) {
+            event.clipboardData.setData('text/plain', "don't copy");
+            event.preventDefault();
+        });
+    </script>
+</main>
+</body>
+
+</html>
