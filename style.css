@@ -620,6 +620,9 @@ nav ul li a.active::after {
         padding-top: 20px !important;
         width: fit-content;
     }
+    .explore-hori {
+        margin-top: 50px;
+    }
 }
 
 .about-section {
