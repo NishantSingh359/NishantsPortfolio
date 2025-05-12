@@ -100,28 +100,24 @@
             </div>
             <div class="right">
                 <ul class="nav-bar" id="sidemenu">
-                    <li><a href="#home" onclick="toggleMenu()" class="hover-this"><span>Home</span></a></li>
-                    <li><a href="#about" onclick="toggleMenu()" class="hover-this"><span>About</span></a></li>
-                    <li><a href="#experience" onclick="toggleMenu()" class="hover-this"><span>Experience</span></a></li>
-                    <li><a href="#skill" onclick="toggleMenu()" class="hover-this"><span>Skill</span></a></li>
-                    <li><a href="#projects" onclick="toggleMenu()" class="hover-this"><span>Projects</span></a></li>
-                    <li><a href="#contactme" onclick="toggleMenu()" class="hover-this"><span>Contact me</span> </a></li>
+                        <li><a href="#home" class="hover-this"><span>Home</span></a></li>
+                        <li><a href="#about" class="hover-this"><span>About</span></a></li>
+                        <li><a href="#experience" class="hover-this"><span>Experience</span></a></li>
+                        <li><a href="#skill" class="hover-this"><span>Skill</span></a></li>
+                        <li><a href="#projects" class="hover-this"><span>Projects</span></a></li>
+                        <li><a href="#contactme" class="hover-this"><span>Contact me</span></a></li>
                     <div class="cursor"></div>
                 </ul>
-                <div id="menubutton" onclick="toggleMenu()">
-                    <div class="fa-solid fa-bar" id="menuicon">
+                <div id="menubutton">
+                    <div class="fa-solid fa-bar"  id="menuicon">
                         <div class="bline one"></div>
                         <div class="bline two"></div>
                         <div class="bline three"></div>
                     </div>
-                    <!--<div class="fa-solid fa-xmar" onclick="closemenu()" id="closeicon">
-                        <div class="xline one"></div>
-                        <div class="xline two"></div>
-                        <div class="xline three"></div>
-                    </div>-->
                 </div>
             </div>
         </nav>
+        <!----------- NAV BACKGROUND HIDDEN AND AUTOMATICALLY SHOW----------->
         <script>
             window.addEventListener("scroll", function () {
                 let navbar = document.querySelector("nav");
@@ -132,6 +128,34 @@
                 }
             });
         </script>
+
+        <!----------- NAV BAR MENUE CLICK EVENT AND ITEMS ANIMATION  ----------->
+        <script>
+        // Select the sidemenu and menu button
+        var sidemen = document.getElementById("sidemenu");
+        var menuButton = document.getElementById("menubutton");
+
+        // Function to toggle the menu
+        function toggleMenu() {
+            sidemen.classList.toggle("active");
+            menuButton.classList.toggle("active");
+            sidemen.style.right = sidemen.classList.contains("active") ? "10px" : "-200px";
+        }
+
+        // Add event listeners to all links inside the sidemenu
+        document.querySelectorAll("#sidemenu a").forEach(link => {
+            link.addEventListener("click", function () {
+                // Close the menu when a link is clicked
+                if (sidemen.classList.contains("active")) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Add event listener to the menu button
+        menuButton.addEventListener("click", toggleMenu);
+        </script>
+
         <!--- FOR NAV BAR COOL IFFECT --->
         <script>
             (function () {
@@ -166,22 +190,7 @@
         </script>
     </head>
 
-    <!----------- NAV BAR MENUE ----------->
-    <script>
-        var sidemen = document.getElementById("sidemenu");
-        var menuButton = document.getElementById("menubutton");
-
-        function toggleMenu() {
-            sidemen.classList.toggle("active");
-            menuButton.classList.toggle("active");
-            sidemen.style.right = sidemen.classList.contains("active") ? "10px" : "-200px";
-        }
-
-        // Close menu when clicking on any link inside
-        document.querySelectorAll("#sidemenu a").forEach(link => {
-            link.addEventListener("click", toggleMenu);
-        });
-    </script>
+    
     <section id="home" class="firstsection">
         <div class="leftsection">
             <div class='left-hole'>
