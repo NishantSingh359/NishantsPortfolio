@@ -669,25 +669,23 @@ nav ul li a.active::after {
     align-items: center;
     flex-direction: column;
 }
-
+.about-intro {
+    height: 100dvh;
+}
 .about-container {
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 50px);
     max-width: 900px;
-    margin: auto;
-    padding-top: 150px;
-    padding-bottom: 70px;
+    height: 60dvh;
 }
 
 .about-img img {
-    width: 150px;
+    width: 190px;
     border-radius: 50%;
     position: relative;
     border: .25rem solid rgb(2, 2, 43);
-    border-top-color: #040463;
-    border-left-color: #040463;
-    border-bottom-color: #040463;
+    
 }
 
 .about-text h2 {
@@ -734,8 +732,7 @@ nav ul li a.active::after {
 .scrolling-name {
     display: flex;
     width: 100%;
-    height: 120px;
-    margin-bottom: 120px;
+    height: 30dvh;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -745,14 +742,15 @@ nav ul li a.active::after {
     font-weight: 300;
     width: 100%;
     height: auto;
-    font-size: 80px;
+    font-size: 100px;
     letter-spacing: 5px;
     display: inline-block;
     flex: 0 0 auto;
     animation: scroll-right 10s linear infinite;
 }
 
-/* ======*/
+/*========== About More ==========*/
+
 .about-more {
     opacity: 0;
     transform: translateX(-50px);
@@ -782,7 +780,8 @@ nav ul li a.active::after {
 
 .about-more .ver {
     position: relative;
-    width: 1px;
+    border-radius: 5%;
+    width: 2px;
     height: 60px;
     background-color: #979090;
 }
@@ -825,17 +824,20 @@ nav ul li a.active::after {
 
 .about-more .exp {
     margin-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 
 .explore-hori {
-    height: 1px;
+    border-radius: 5px;
+    height: 2px;
     background: #979090;
     width: auto;
+    margin-right: 20%;
+    margin-left: 1%;
 }
 
 .explore {
-    padding-top: 20px;
+    padding-top: 50px;
     font-size: 50px;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -843,6 +845,7 @@ nav ul li a.active::after {
 
 /* ====================== EXPERIENCE SECTION  ====================== */
 
+/* ===== animation ===== */
 .secondsection {
     transition: transform 0.5s ease-in-out;
     transform: scale(0.95);
@@ -850,74 +853,10 @@ nav ul li a.active::after {
 }
 
 .secondsection.visible {
-    transform: scale(1);
+    transform: scale(1); 
     opacity: 1;
 }
 
-.secondsection {
-    padding: 0 5vw;
-    padding-top: 40px !important;
-    height: auto;
-    background-color: #03033645;
-    padding-bottom: 60px !important;
-}
-
-.course-exp {
-    height: 340px;
-    width: 100%;
-}
-
-@media(max-width: 600px) {
-    .secondsection .h2 {
-        display: block !important;
-    }
-
-    .secondsection .h2 {
-        margin-top: 0px;
-        margin-bottom: clamp(0px, 5vw, 50px);
-        font-size: clamp(27px, 4vw, 50px);
-        font-weight: 400;
-        text-align: center;
-    }
-
-    .secondsection .h1 {
-        display: none;
-    }
-}
-
-.secondsection .h2 {
-    display: none;
-}
-
-.secondsection .h1 {
-    margin-top: 0px;
-    margin-bottom: clamp(0px, 5vw, 50px);
-    font-size: clamp(20px, 4vw, 50px);
-    font-weight: 400;
-    text-align: center;
-}
-
-.secondsection .box {
-    background: #04044f99;
-    height: 2px;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: clamp(80px, 22vw, 250px);
-}
-
-.secondsection .vertical {
-    height: clamp(100px, 14vw, 150px);
-    width: 2px;
-    background-color: #04044f99;
-    /* margin-right: 150px; */
-    position: relative;
-    margin-top: 30px;
-    transition: height 1s ease-in-out;
-    transform-origin: 1s;
-}
-
-/* aniamtion */
 .vertical-title {
     opacity: 0;
     transform: translateX(-50px);
@@ -930,10 +869,59 @@ nav ul li a.active::after {
     transform: translateX(0);
 }
 
+/* Hide horizontal scrollbar but allow scrolling */
+.about-course {
+    scrollbar-width: none;     
+    -ms-overflow-style: none;   
+}
+.about-course::-webkit-scrollbar {
+    display: none;           
+}
+
+/*==========*/
+.secondsection {
+    padding-top: 10dvh;
+    height: 100dvh;
+    background-color: #03033645;
+    padding-bottom: 10dvh;
+}
+
+.course-exp {
+    height: 40dvh;
+    width: 100%;
+}
+
+.secondsection .h1 {
+    margin-top: 0px;
+    font-size: clamp(20px, 4vw, 50px);
+    font-weight: 400;
+    text-align: center;
+}
+
+.secondsection .h2 {
+    display: none;
+}
+
+.secondsection .box {
+    display: flex;
+    justify-content: center;
+    margin-top: 2dvh;
+    gap: clamp(80px, 22vw, 250px);
+}
+
+.secondsection .vertical {
+    height: 17dvh;
+    width: 2px;
+    background-color: #04044f99;
+    position: relative;
+    transition: height 1s ease-in-out;
+    transform-origin: 1s;
+}
+
 .vertical-title {
     position: relative;
     font-size: clamp(10px, 2vw, 16px);
-    top: clamp(130px, 15vw, 170px);
+    top: 19dvh;
     color: white;
     text-align: center;
     justify-content: center;
@@ -948,7 +936,7 @@ nav ul li a.active::after {
 .vertical-desc {
     position: relative;
     font-size: clamp(9px, 1.1vw, 13px);
-    top: clamp(130px, 15vw, 170px);
+    top: 20dvh;
     color: #d9d9d9;
     display: flex;
     justify-content: center;
@@ -962,6 +950,7 @@ nav ul li a.active::after {
 }
 
 .courseinfo {
+    padding: 0 clamp(5px, 1vw, 50px);
     width: 100%;
     height: auto;
 }
@@ -969,58 +958,28 @@ nav ul li a.active::after {
 .about-course {
     height: auto;
     width: auto;
-    gap: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 240px);
-}
-
-@media (max-width: 600px) {
-    .secondsection {
-        padding: 60px 3vw !important;
-    }
-
-    .course-exp {
-        height: 260px !important;
-    }
-
-    .aboutcourseinfo {
-        width: 175px !important;
-        padding: 10px !important;
-        height: auto !important;
-    }
-
-    .about-course {
-        gap: 10px;
-        grid-template-columns: repeat(auto-fit, 175px) !important;
-    }
-
-    .fa-certificate {
-        bottom: 0px !important;
-        right: 0px !important;
-        font-size: 20px !important;
-    }
-
-    .aboutcourseinfo p {
-        font-size: 11px !important;
-    }
+    display: flex;
+    gap: 21px;
 }
 
 .aboutcourseinfo {
     display: flex;
     background-color: #00002d;
     height: auto;
-    width: 242px;
+    width: 300px;
     padding: 15px;
     border-radius: 10px;
-    justify-content: space-between;
     flex-direction: column;
 }
-
-.aboutcourseinfo:hover {
-    scale: 1.03;
-    transition: .5s ease-in-out;
+.aboutcourseinfo h3 {
+    color: #d9d9d9;
+    font-weight: 400;
+    font-size: 15px;
+    padding-bottom: 10px;
 }
-
+.aboutcourseinfo .info-ca {
+    justify-content: space-between;
+}
 .aboutcourseinfo p {
     color: #d9d9d9;
     font-weight: 300;
@@ -1035,6 +994,69 @@ nav ul li a.active::after {
 
 .fa-certificate:hover {
     scale: 1.1;
+}
+
+@media (max-height: 700px) {
+    .aboutcourseinfo {
+        height: 25dvh;
+        width: 450px;
+    }
+}
+@media (max-width: 600px) {
+
+    .secondsection .h2 {
+        display: block !important;
+    }
+
+    .secondsection .h2 {
+        margin-top: 0px;
+        font-size: clamp(27px, 4vw, 50px);
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .secondsection .h1 {
+        display: none;
+    }
+
+    .aboutcourseinfo {
+        padding: 15px !important;
+        height: auto !important;
+    }
+
+    .about-course {
+        padding: 0 !important;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, 175px) !important;
+    }
+
+    .fa-certificate {
+        bottom: 0px !important;
+        right: 0px !important;
+        font-size: 20px !important;
+    }
+
+    .aboutcourseinfo p {
+        font-size: 13px !important;
+    }
+}
+
+/* horizontally scrollable  */
+@media (max-width: 1300px) {
+  .about-course {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    transform: none !important; 
+  }
+  .aboutcourseinfo {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
 }
 
 /* ====================== SKILL SECTION  ====================== */

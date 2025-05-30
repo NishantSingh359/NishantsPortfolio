@@ -250,6 +250,7 @@
     <!----------------------- ABOUT SECTION ----------------------->
 
     <section class="about-section" id="about">
+        
         <div class="about-container" id="about-section">
             <div class="about-img">
                 <img src="https://avatars.githubusercontent.com/u/180900384?v=4" alt="Nishant Singh">
@@ -266,6 +267,7 @@
                 Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh - Nishant Singh
             </div>
         </div>
+       
         <!-- Hidden Content -->
         <div id="more-info" class="about-more">
             <div class="data-analytics">
@@ -396,39 +398,46 @@
         <div class="journey">
             <div class="course-exp">
                 <div class="box">
-                    <div class="vertical">
-                        <div class=" vertical-title">
+                    <div class="vertical"><div class=" vertical-title"></div>
+                        <a href="pdf/Excel certificate.pdf" target="_blank" style="text-decoration: none" ;>
+                            <div class=" vertical-title">
                             Advance Excel
-                        </div>
+                            </div>
+                        </a>
                         <div class="vertical-desc">
                             <spam class='with'>With</spam>
                             <span>Skil Course</span>
                         </div>
                     </div>
                     <div class="vertical">
-
-                        <div class=" vertical-title">
+                        <a href="pdf/Excel dashboard certificates.pdf" target="_blank" style="text-decoration: none" ;>
+                            <div class=" vertical-title">
                             Dashboard in Excel
-                        </div>
+                            </div>
+                        </a>
+                        
                         <div class="vertical-desc">
                             <spam class="with">With</spam>
                             <span>Skil Course</span>
                         </div>
                     </div>
                     <div class="vertical">
-
-                        <div class=" vertical-title">
+                         <a href="pdf/Power Quary.pdf" target="_blank" style="text-decoration: none" ;>
+                            <div class=" vertical-title">
                             Power Quary
-                        </div>
+                            </div>
+                        </a>                       
                         <div class="vertical-desc">
                             <spam class='with'>With</spam>
                             <span>Skil Course</span>
                         </div>
                     </div>
                     <div class="vertical">
-                        <div class=" vertical-title">
+                        <a href="pdf/Data Analytics Certificate.jpg" target="_blank" style="text-decoration: none" ;>
+                            <div class=" vertical-title">
                             Data Analytics
-                        </div>
+                            </div>
+                        </a>                       
                         <div class="vertical-desc">
                             <spam class='with'>With</spam>
                             <span>The iScale</span>
@@ -436,62 +445,45 @@
                     </div>
                 </div>
             </div>
+                
             <div class="courseinfo">
                 <div class="about-course">
                     <div class="aboutcourseinfo">
-                        <p> I started my journey with an Advanced Excel course, where I deep-dived into various concepts and learned many interesting things.
-                             This course gave me the best learning experience and motivated me to continue my journey in this field.
-                        </p>
-                        <a href="pdf/Excel certificate.pdf" target="_blank" style="text-decoration: none" ;>
-                            <i class="fa-solid fa-certificate"></i>
-                        </a>
+                        <h3>Advance Excel</h3>
+                        <div class = info-ca>
+                            <p> I started my journey with an Advanced Excel course, where I deep-dived into various concepts and learned many interesting things.
+                                This course gave me the best learning experience and motivated me to continue my journey in this field.
+                            </p>
+                        </div>
                     </div>
                     <div class="aboutcourseinfo">
-                        <p> The Dashboard in Excel course taught me how to present data effectively using charts and identify the best visualization techniques.
-                             Designing dashboards was the most exciting part for me, and it strengthened my decision to move further in this field.
-                        </p>
-                        <a href="pdf/Excel dashboard certificates.pdf" target="_blank" style="text-decoration: none" ;>
-                            <i class="fa-solid fa-certificate"></i>
-                        </a>
+                        <h3>Dashboard in Excel</h3>
+                        <div class = info-ca>
+                            <p> The Dashboard in Excel course taught me how to present data effectively using charts and identify the best visualization techniques.
+                                Designing dashboards was the most exciting part for me, and it strengthened my decision to move further in this field.
+                            </p>
+                        </div>
                     </div>
                     <div class="aboutcourseinfo">
-                        <p> Through the Power Query course, I became familiar with ETL processes, data cleaning, and formatting. This was a completely different 
-                            experience, and following each step helped me gain clarity about pursuing Data Analytics.
-                        </p>
-                        <a href="pdf/Power Quary.pdf" target="_blank" style="text-decoration: none" ;>
-                            <i class="fa-solid fa-certificate"></i>
-                        </a>
+                        <h3>Power Query</h3>
+                        <div class = info-ca>
+                            <p> Through the Power Query course, I became familiar with ETL processes, data cleaning, and formatting. This was a completely different 
+                                experience, and following each step helped me gain clarity about pursuing Data Analytics.
+                            </p>                           
+                        </div>
                     </div>
                     <div class="aboutcourseinfo">
-                        <p> The Data Analytics course was more challenging compared to my previous courses. To complete it, I followed a structured approach.
-                             The best part was overcoming my biggest fear—coding. This course made me comfortable with programming and boosted my confidence.
-                        </p>
-                        <a href="pdf/Data Analytics Certificate.jpg" target="_blank" style="text-decoration: none" ;>
-                            <i class="fa-solid fa-certificate"></i>
-                        </a>
+                        <h3>Data Analytics</h3>
+                        <div class = info-ca>
+                            <p> The Data Analytics course was more challenging compared to my previous courses. To complete it, I followed a structured approach.
+                                The best part was overcoming my biggest fear—coding. This course made me comfortable with programming and boosted my confidence.
+                            </p>  
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('scroll', function () {
-                const scrollContainer = document.querySelector('.about-course');
-                const scrollY = window.scrollY;
-                const containerWidth = scrollContainer.scrollWidth; // Total width of all boxes
-                const viewportWidth = window.innerWidth; // Width of the visible viewport
-                const maxScroll = containerWidth - viewportWidth; // Maximum scrollable distance
-
-                // Calculate the scroll progress (0 to 1)
-                const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
-
-                // Increase the multiplier to make scrolling faster
-                const speedMultiplier = 2; // Adjust this value to control the speed
-                const translateX = -scrollProgress * maxScroll * speedMultiplier;
-
-                // Apply the transformation in real-time
-                scrollContainer.style.transform = `translateX(${translateX}px)`;
-            });
-        </script>
+   
     </section>
     <!----------------------- SKILL SECTION ----------------------->
 

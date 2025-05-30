@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 aboutSection.classList.remove("animate"); // Remove class when out of view
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     observer.observe(document.querySelector("#more-info"));
 });
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ========== EXPERIENCE SECTION VERTICAL LINE ANIMATION
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const verticalLines = document.querySelectorAll(".vertical");
     const experienceSection = document.getElementById("experience");
 
@@ -239,8 +239,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     window.addEventListener("scroll", checkScroll);
-});
+});*/
 
+// ========== EXPERIENCE SECTION BOXES LEFT RIGHY SCROLLING
+
+document.addEventListener('scroll', function () {
+    const scrollContainer = document.querySelector('.about-course');
+    // Only apply transform on large screens
+    if (window.innerWidth > 900) {
+        const scrollY = window.scrollY;
+        const containerWidth = scrollContainer.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const maxScroll = containerWidth - viewportWidth;
+        const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
+        const speedMultiplier = 15;
+        const translateX = -scrollProgress * maxScroll * speedMultiplier;
+        scrollContainer.style.transform = `translateX(${translateX}px)`;
+    } else {
+        // Remove transform on small screens
+        scrollContainer.style.transform = 'none';
+    }
+});
 
 
 
