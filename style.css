@@ -84,7 +84,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
+    height: 6dvh;
     /*background-color: rgb(0 0 67);*/
     background: transparent;
     /* Initially Transparent */
@@ -150,12 +150,10 @@ nav.scrolled {
 .hover-logo:focus>span>span {
     transform: translateY(-200%);
 }
-
 nav ul {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
-
 nav ul li {
     display: block;
 }
@@ -167,6 +165,12 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     position: relative;
+}
+.nav-header {
+    display: none;
+}
+.nav-footer {
+    display: none;
 }
 /*----*/
 /* Ensure menu items are hidden initially */
@@ -191,19 +195,22 @@ nav ul li a {
         transition-delay: 0.1s;
     }
     #sidemenu.active li:nth-child(2) {
-        transition-delay: 0.2s;
+        transition-delay: 0.15s;
     }
     #sidemenu.active li:nth-child(3) {
-        transition-delay: 0.3s;
+        transition-delay: 0.20s;
     }
     #sidemenu.active li:nth-child(4) {
-        transition-delay: 0.4s;
+        transition-delay: 0.25s;
     }
     #sidemenu.active li:nth-child(5) {
-        transition-delay: 0.5s;
+        transition-delay: 0.3s;
     }
     #sidemenu.active li:nth-child(6) {
-        transition-delay: 0.6s;
+        transition-delay: 0.35s;
+    }
+    #sidemenu.active li:nth-child(7) {
+        transition-delay: 0.4s;
     }
 }
 /*-----------*/
@@ -328,33 +335,81 @@ nav ul li a.active::after {
     }
 
     nav ul li {
-        padding: 10px 20px;
+        margin-bottom: 10px;
+        width: 50px;
     }
 
     nav ul li a {
         margin-left: 0px;
-        font-size: 14px;
-        font-weight: 200;
+        font-size: 39px;
         display: block;
+        font-weight: 400;
     }
 
     nav ul {
         display: flex;
-        align-items: center;
+        width: 100%;
+        height: 94dvh;
         /*background-color: #040463;*/
-        background-color: #030336a6;
-        backdrop-filter: blur(4px);
+        background-color: #030336;
         position: absolute;
-        top: 500%;
-        right: -200px;
-        margin-left: auto;
-        width: fit-content;
-        border-radius: 30px;
+        right: -500px;
         padding: 35px 0px;
         flex-direction: column;
         transition: right 0.6s;
+        margin-top: 5dvh;
+        padding: 2dvh;
+        align-items: unset;
     }
-
+    .nav-header {
+        display: unset;
+        width: 100%;
+        margin-top: 5dvh;
+        height: auto;
+    }
+    .header-text {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        font-weight: 300;
+        color: lightgray;
+    }
+    .header-line {
+        width: 100%;
+        height: 1px;
+        background-color: lightgray;
+        margin: 3dvh 0;
+    }
+    .nav-footer {
+        display: unset;
+        margin-top: auto;
+        margin-bottom: 2dvh;
+        height: auto;
+        width: 100%;
+    }
+    .footer-line {
+        height: 1px;
+        background-color: lightgray;
+        width: 100%;
+    }
+    .footer-text {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        font-weight: 300;
+        color: lightgray;
+        margin-top: 4dvh;
+        margin-bottom: 2dvh;
+    }
+    .footer-social {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 10px;
+    }
+    .social-text {
+        text-decoration: none;
+        color: white;
+        font-size: 2dvh;
+    }
     nav ul li a::after {
         content: " ";
         width: 0;
@@ -862,16 +917,27 @@ nav ul li a.active::after {
 
 .vertical-title {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(50px);
     /* Start position (50px to the left) */
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .vertical-title.animate {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
+.vertical-desc {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Start position (50px to the left) */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.vertical-desc.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* Hide horizontal scrollbar but allow scrolling */
 .about-course {
     scrollbar-width: none;     

@@ -197,10 +197,28 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(zoomSection);
 });
 
-// ========== EXPERIENCE SECTION TEXT ANIMATION
+// ========== EXPERIENCE SECTION COURSE TITLE TEXT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = document.querySelectorAll(".vertical-title");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            } else {
+                entry.target.classList.remove("animate"); // Resets animation when out of view
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(project => observer.observe(project));
+});
+
+// ========== EXPERIENCE SECTION COURSE WITH TEXT ANIMATION
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".vertical-desc");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

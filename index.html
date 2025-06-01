@@ -100,13 +100,31 @@
             </div>
             <div class="right">
                 <ul class="nav-bar" id="sidemenu">
+                        <div class = "nav-header">
+                            <div class = "header-text">
+                                NAVIGATION
+                            </div>
+                            <div class = "header-line"></div>
+                        </div>
                         <li><a href="#home" class="hover-this"><span>Home</span></a></li>
                         <li><a href="#about" class="hover-this"><span>About</span></a></li>
                         <li><a href="#experience" class="hover-this"><span>Experience</span></a></li>
                         <li><a href="#skill" class="hover-this"><span>Skill</span></a></li>
                         <li><a href="#projects" class="hover-this"><span>Projects</span></a></li>
-                        <li><a href="#contactme" class="hover-this"><span>Contact me</span></a></li>
-                    <div class="cursor"></div>
+                        <li><a href="#contactme" class="hover-this"><span>Contact</span></a></li>
+                        <div class="cursor"></div>
+                        <div class = "nav-footer">
+                            <div class = "footer-line"> </div>
+                            <div class = "footer-text">SOCIALS</div>
+                            <div class = "footer-social">
+                                <a class = "social-text" href="https://nishantsingh359.github.io/NishantsPortfolio/">
+                                    GitHub
+                                </a>
+                                <a class = "social-text" href="https://nishantsingh359.github.io/NishantsPortfolio/">
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
                 </ul>
                 <div id="menubutton">
                     <div class="fa-solid fa-bar"  id="menuicon">
@@ -139,7 +157,7 @@
         function toggleMenu() {
             sidemen.classList.toggle("active");
             menuButton.classList.toggle("active");
-            sidemen.style.right = sidemen.classList.contains("active") ? "10px" : "-200px";
+            sidemen.style.right = sidemen.classList.contains("active") ? "0px" : "-100%";
         }
 
         // Add event listeners to all links inside the sidemenu
