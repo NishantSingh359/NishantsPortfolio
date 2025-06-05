@@ -246,9 +246,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // ========== EXPERIENCE SECTION BOXES LEFT RIGHY SCROLLING
 
 
-document.addEventListener('scroll', function () {
+// ...existing code...
+
+function handleAboutCourseScroll() {
     const scrollContainer = document.querySelector('.about-course');
-    // Only apply transform on large screens
+    if (!scrollContainer) return;
     if (window.innerWidth > 900) {
         const scrollY = window.scrollY;
         const containerWidth = scrollContainer.scrollWidth;
@@ -259,10 +261,37 @@ document.addEventListener('scroll', function () {
         const translateX = -scrollProgress * maxScroll * speedMultiplier;
         scrollContainer.style.transform = `translateX(${translateX}px)`;
     } else {
-        // Remove transform on small screens
         scrollContainer.style.transform = 'none';
     }
-});
+}
+
+let aboutCourseScrollAttached = false;
+
+function setupAboutCourseScroll() {
+    const scrollContainer = document.querySelector('.about-course');
+    if (!scrollContainer) return;
+
+    // Remove previous event listener if any
+    window.removeEventListener('scroll', handleAboutCourseScroll);
+
+    if (window.innerWidth > 900) {
+        window.addEventListener('scroll', handleAboutCourseScroll);
+        aboutCourseScrollAttached = true;
+        // Run once to set initial position
+        handleAboutCourseScroll();
+    } else {
+        scrollContainer.style.transform = 'none';
+        aboutCourseScrollAttached = false;
+    }
+}
+
+window.addEventListener('DOMContentLoaded', setupAboutCourseScroll);
+window.addEventListener('resize', setupAboutCourseScroll);
+
+// Remove this old code:
+// document.addEventListener('scroll', function () { ... });
+
+// ...existing code...
 
 // ==================================== SKILL SECTION ===============================================
 
