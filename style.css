@@ -1,5 +1,6 @@
+/* Remove scroll snapping */
 html, body {
-  overscroll-behavior-y: contain;
+  scroll-snap-type: none;
 }
 
 
