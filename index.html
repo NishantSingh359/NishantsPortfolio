@@ -100,12 +100,14 @@
             </div>
             <div class="right">
                 <ul class="nav-bar" id="sidemenu">
+
                         <div class = "nav-header">
                             <div class = "header-text">
                                 NAVIGATION
                             </div>
                             <div class = "header-line"></div>
                         </div>
+
                         <li><a href="#home" class="hover-this"><span>Home</span></a></li>
                         <li><a href="#about" class="hover-this"><span>About</span></a></li>
                         <li><a href="#experience" class="hover-this"><span>Experience</span></a></li>
@@ -113,18 +115,20 @@
                         <li><a href="#projects" class="hover-this"><span>Projects</span></a></li>
                         <li><a href="#contactme" class="hover-this"><span>Contact</span></a></li>
                         <div class="cursor"></div>
+
                         <div class = "nav-footer">
                             <div class = "footer-line"> </div>
                             <div class = "footer-text">SOCIALS</div>
                             <div class = "footer-social">
-                                <a class = "social-text" href="https://nishantsingh359.github.io/NishantsPortfolio/">
+                                <a href="https://github.com/NishantSingh359" class="social-text" target="_blank">
                                     GitHub
                                 </a>
-                                <a class = "social-text" href="https://nishantsingh359.github.io/NishantsPortfolio/">
+                                <a href="https://www.linkedin.com/in/nishantsinghinfo/" class="social-text" target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
                         </div>
+                        
                 </ul>
                 <div id="menubutton">
                     <div class="fa-solid fa-bar"  id="menuicon">
@@ -135,6 +139,36 @@
                 </div>
             </div>
         </nav>
+      
+        <script>
+            const menuButton = document.getElementById("menubutton");
+            const menu = document.getElementById("sidemenu");
+            const navLinks = document.querySelectorAll(".nav-bar a");
+
+            let isOpen = false;
+
+            menuButton.addEventListener("click", () => {
+            if (!isOpen) {
+                menu.classList.remove("close");
+                menu.classList.add("open");
+                isOpen = true;
+            } else {
+                menu.classList.remove("open");
+                menu.classList.add("close");
+                isOpen = false;
+            }
+            });
+
+            // Close menu with animation when any nav link is clicked
+            navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("open");
+                menu.classList.add("close");
+                isOpen = false;
+            });
+            });
+        </script>
+        
         <!----------- NAV BACKGROUND HIDDEN AND AUTOMATICALLY SHOW----------->
         <script>
             window.addEventListener("scroll", function () {
@@ -148,32 +182,7 @@
         </script>
 
         <!----------- NAV BAR MENUE CLICK EVENT AND ITEMS ANIMATION  ----------->
-        <script>
-        // Select the sidemenu and menu button
-        var sidemen = document.getElementById("sidemenu");
-        var menuButton = document.getElementById("menubutton");
-
-        // Function to toggle the menu
-        function toggleMenu() {
-            sidemen.classList.toggle("active");
-            menuButton.classList.toggle("active");
-            sidemen.style.right = sidemen.classList.contains("active") ? "0px" : "-100%";
-        }
-
-        // Add event listeners to all links inside the sidemenu
-        document.querySelectorAll("#sidemenu a").forEach(link => {
-            link.addEventListener("click", function () {
-                // Close the menu when a link is clicked
-                if (sidemen.classList.contains("active")) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // Add event listener to the menu button
-        menuButton.addEventListener("click", toggleMenu);
-        </script>
-
+        
         <!--- FOR NAV BAR COOL IFFECT --->
         <script>
             (function () {

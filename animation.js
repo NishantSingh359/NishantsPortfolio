@@ -34,25 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500);
 
 })
-// ========== SMOOTH SCROLLING
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navbarHeight = document.querySelector("nav").offsetHeight; // Adjust based on your navbar height
-    const links = document.querySelectorAll("nav a");
-
-    links.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default jump
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                const targetPosition = targetSection.offsetTop - navbarHeight - 20; // Offset to avoid overlap
-                window.scrollTo({ top: targetPosition, behavior: "smooth" });
-            }
-        });
-    });
-});
 // ==================================== NAV BAR ===============================================
 
 // ========== NAV BAR HIGHLIGHT 
@@ -80,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", changeActiveNav);
 });
+
+
 
 // ==================================== HOME SECTION ===============================================
 document.addEventListener("DOMContentLoaded", () => {
