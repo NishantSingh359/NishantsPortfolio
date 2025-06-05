@@ -1,8 +1,9 @@
-/* Remove scroll snapping */
-html, body {
-  scroll-snap-type: none;
+@media (max-width: 600px) {
+  html, body, main, section {
+    scroll-snap-type: none !important;
+    overscroll-behavior: auto !important;
+  }
 }
-
 
 .intro {
     position: fixed;
