@@ -265,33 +265,22 @@ function handleAboutCourseScroll() {
     }
 }
 
-let aboutCourseScrollAttached = false;
-
 function setupAboutCourseScroll() {
-    const scrollContainer = document.querySelector('.about-course');
-    if (!scrollContainer) return;
-
-    // Remove previous event listener if any
     window.removeEventListener('scroll', handleAboutCourseScroll);
-
     if (window.innerWidth > 900) {
         window.addEventListener('scroll', handleAboutCourseScroll);
-        aboutCourseScrollAttached = true;
-        // Run once to set initial position
-        handleAboutCourseScroll();
+        handleAboutCourseScroll(); // set initial position
     } else {
-        scrollContainer.style.transform = 'none';
-        aboutCourseScrollAttached = false;
+        const scrollContainer = document.querySelector('.about-course');
+        if (scrollContainer) scrollContainer.style.transform = 'none';
     }
 }
 
 window.addEventListener('DOMContentLoaded', setupAboutCourseScroll);
 window.addEventListener('resize', setupAboutCourseScroll);
 
-// Remove this old code:
-// document.addEventListener('scroll', function () { ... });
-
 // ...existing code...
+
 
 // ==================================== SKILL SECTION ===============================================
 
