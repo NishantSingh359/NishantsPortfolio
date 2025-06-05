@@ -245,9 +245,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ========== EXPERIENCE SECTION BOXES LEFT RIGHY SCROLLING
 
-document.addEventListener('scroll', function () {
+
+function handleAboutCourseScroll() {
     const scrollContainer = document.querySelector('.about-course');
-    // Only apply transform on large screens
+    if (!scrollContainer) return;
     if (window.innerWidth > 900) {
         const scrollY = window.scrollY;
         const containerWidth = scrollContainer.scrollWidth;
@@ -258,11 +259,25 @@ document.addEventListener('scroll', function () {
         const translateX = -scrollProgress * maxScroll * speedMultiplier;
         scrollContainer.style.transform = `translateX(${translateX}px)`;
     } else {
-        // Remove transform on small screens
         scrollContainer.style.transform = 'none';
     }
-});
+}
 
+// Only add the scroll event on desktop
+function setupAboutCourseScroll() {
+    window.removeEventListener('scroll', handleAboutCourseScroll);
+    if (window.innerWidth > 900) {
+        window.addEventListener('scroll', handleAboutCourseScroll);
+    } else {
+        // On mobile, reset transform
+        const scrollContainer = document.querySelector('.about-course');
+        if (scrollContainer) scrollContainer.style.transform = 'none';
+    }
+}
+
+// Run on load and on resize
+window.addEventListener('DOMContentLoaded', setupAboutCourseScroll);
+window.addEventListener('resize', setupAboutCourseScroll);
 
 
 // ==================================== SKILL SECTION ===============================================
