@@ -1672,6 +1672,39 @@ nav ul li a.active::after {
 }
 
 /* =========================================== CONTACT-ME ==========================================*/
+
+.col {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1s ease-out;
+}
+
+.col.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.subtitle {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1s ease-out;
+}
+
+.subtitle.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.s-icon {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1s ease-out;
+}
+
+.s-icon.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 @media (max-width: 600px) {
     .contactme {
         display: flow !important;
@@ -1701,12 +1734,13 @@ nav ul li a.active::after {
     }
 
     .contact-right h1 {
-        font-size: 70px !important;
+        font-size: 55px !important;
     }
 
     .C-left .text {
         font-size: 10px !important;
     }
+    
 }
 
 .contact-me {
@@ -1825,7 +1859,7 @@ nav ul li a.active::after {
 }
 
 .contact-mid {
-    background: #04044f99;
+    background: #04044f61;
     width: 2px;
     margin: 10dvh 0px;
 }
@@ -1841,20 +1875,24 @@ nav ul li a.active::after {
 }
 
 .contact-right h1 {
-    font-size: 10dvh;
+    font-size: clamp(45px,8vw,98px);
     font-weight: 400;
-    text-align: right;
+    text-align: center;
 }
 
 .social-icon {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5dvh;
 }
 
 .s-icon {
     display: flex;
+    font-size: 10px;
     align-items: center;
     justify-content: right;
-    gap: 10px;
+    gap: 15px;
 }
 
 .s-icon .fa-brands:hover {
@@ -1862,6 +1900,6 @@ nav ul li a.active::after {
 }
 
 .s-icon .fa-brands {
-    font-size: 30px;
+    font-size: 35px;
     color: purple;
 }

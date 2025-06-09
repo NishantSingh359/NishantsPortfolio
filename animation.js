@@ -349,7 +349,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(zoomSection);
 });
-// ========== PROJECT SECTION TEXT ANIMATION
+
+// ========== PROJECT SECTION TEXT SHAPE RIGHT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = document.querySelectorAll(".project");
@@ -366,9 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     projects.forEach(project => observer.observe(project));
 });
-
-
-// ========== PROJECT SECTION TEXT SHAPE RIGHT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = document.querySelectorAll(".info-box");
@@ -533,3 +531,53 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(zoomSection);
 });
 
+// ========== CONTACT SECTION ICON TEXT ANIMATION
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".col");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            } else {
+                entry.target.classList.remove("animate"); // Resets animation when out of view
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(project => observer.observe(project));
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".subtitle");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            } else {
+                entry.target.classList.remove("animate"); // Resets animation when out of view
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(project => observer.observe(project));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll(".s-icon");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            } else {
+                entry.target.classList.remove("animate"); // Resets animation when out of view
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(project => observer.observe(project));
+});
