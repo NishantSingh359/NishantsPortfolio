@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales, Customer & Product Analysis | Nishant Singh</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <script src="../../animation.js"></script>
+    <div class="page-shell">
+
+        <div class="page-nav"><a href="../../../index.html">Back to main page</a></div>
+
+        <section class="project-hero">
+            <div class="hero-copy">
+                <h2 class="detail-section-head">Case Study</h2>
+                <h1>Sales, Customer & Product Analysis</h1>
+                <div class="hero-actions">
+                    <a class="button" href="Sales, Customer & Product Dashboard.pbix">Download File</a>
+                </div>
+            </div>
+        </section>
+            <div class="project-main">
+
+                <section class="detail-section code-section">
+                    <h2 class="detail-section-head">Overview</h2>
+                    <div id="overview-content" class="code-box"></div>
+                </section>
+
+                <section class="detail-section anime">
+                    <h2 class="detail-section-head">Gallery</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-card anime">
+                            <a href="./img/sales.jpg" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="./img/sales.jpg"
+                                    alt="Sales Dashboard"></a>
+                        </div>
+                        <div class="gallery-card anime">
+                            <a href="./img/customer.jpg" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="./img/customer.jpg"
+                                    alt="Customer Dashboard"></a>
+                        </div>
+                        <div class="gallery-card anime">
+                            <a href="./img/product.jpg" target="_blank"
+                                rel="noopener noreferrer"><img
+                                    src="./img/product.jpg"
+                                    alt="Product Dashboard"></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    </div>
+
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        fetch("overview.md")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("overview-content").innerHTML = marked.parse(data);
+                hljs.highlightAll();
+            })
+            .catch(err => {
+                document.getElementById("overview-content").innerHTML = "Failed to load overview.";
+                console.error(err);
+            });
+
+        fetch("code.md")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("code-content").innerHTML = marked.parse(data);
+                hljs.highlightAll();
+            })
+            .catch(err => {
+                document.getElementById("code-content").innerHTML = "Failed to load code.";
+                console.error(err);
+            });
+    </script>
+
+</body>
+
+</html>

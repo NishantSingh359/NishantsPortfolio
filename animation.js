@@ -1,40 +1,4 @@
 
-// ========== INTRO SECTION
-let intro = document.querySelector('.intro');
-let logoSpan = document.querySelectorAll('.logo');
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        logoSpan.forEach((span, idx) => {
-            setTimeout(() => {
-                span.classList.add('active');
-            }, (idx + 1) * 400)
-        });
-        setTimeout(() => {
-            logoSpan.forEach((span, idx) => {
-                setTimeout(() => {
-                    span.classList.remove('active');
-                    span.classList.add('fade');
-                }, (idx + 1) * 50);
-            })
-        }, 2000);
-
-    });
-    // Hide intro and show main content after 3 seconds
-    setTimeout(() => {
-        intro.style.top = '-100vh';
-    }, 2500);
-})
-document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.querySelector('main');
-
-    // Hide intro and show main content after 3 seconds
-    setTimeout(() => {
-        intro.style.display = 'none';
-        mainContent.classList.remove('hidden'); // Show the main content
-    }, 3500);
-
-})
-
 // ==================================== NAV BAR ===============================================
 
 // ========== NAV BAR HIGHLIGHT 
@@ -64,26 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // ==================================== HOME SECTION ===============================================
-document.addEventListener("DOMContentLoaded", () => {
-    const zoomSection = document.querySelector(".firstsection");
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    zoomSection.classList.add("visible"); // Zoom in
-                } else {
-                    zoomSection.classList.remove("visible"); // Zoom out
-                }
-            });
-        },
-        { threshold: 0.2 } // Trigger when 50% of the section is visible
-    );
-    observer.observe(zoomSection);
-});
-// ========== TEXT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = document.querySelectorAll(".l-text");
@@ -96,64 +42,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.6 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
 
+// ==================================== ABOUT SECTION ===============================================
+
 document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".rightsection");
+    const aboutBlocks = document.querySelectorAll(".about-reveal");
+
+    if (!aboutBlocks.length) {
+        return;
+    }
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("animate");
             } else {
-                entry.target.classList.remove("animate"); // Resets animation when out of view
-            }
-        });
-    }, { threshold: 0.6 });
-
-    projects.forEach(project => observer.observe(project));
-});
-// ==================================== ABOUT SECTION ===============================================
-
-// ========== ZOOM IN AND ZOOM OUT
-
-document.addEventListener("DOMContentLoaded", () => {
-    const zoomSection = document.querySelector(".about-section");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    zoomSection.classList.add("visible"); // Zoom in
-                } else {
-                    zoomSection.classList.remove("visible"); // Zoom out
-                }
-            });
-        },
-        { threshold: 0.3 } // Trigger when 50% of the section is visible
-    );
-
-    observer.observe(zoomSection);
-});
-// ========== ABOUT MORE TEXT ANIMATION
-
-document.addEventListener("DOMContentLoaded", function () {
-    const aboutSection = document.querySelector(".about-more");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                aboutSection.classList.add("animate");
-            } else {
-                aboutSection.classList.remove("animate"); // Remove class when out of view
+                entry.target.classList.remove("animate");
             }
         });
     }, { threshold: 0 });
 
-    observer.observe(document.querySelector("#more-info"));
+    aboutBlocks.forEach(block => observer.observe(block));
 });
 
 
@@ -175,16 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.2 } // Trigger when 50% of the section is visible
+        { threshold: 0 } // Trigger when 50% of the section is visible
     );
 
     observer.observe(zoomSection);
 });
 
-// ========== EXPERIENCE SECTION COURSE TITLE TEXT ANIMATION
+// ==================================== EXPERIENCE SECTION ===============================================
+
+// ========== EXPERIENCE SECTION TIMELINE ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".vertical-title");
+    const projects = document.querySelectorAll(".timeline-item");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -194,123 +109,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
-
-// ========== EXPERIENCE SECTION COURSE WITH TEXT ANIMATION
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".vertical-desc");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("animate");
-            } else {
-                entry.target.classList.remove("animate"); // Resets animation when out of view
-            }
-        });
-    }, { threshold: 0.3 });
-
-    projects.forEach(project => observer.observe(project));
-});
-
-// ========== EXPERIENCE SECTION VERTICAL LINE ANIMATION
-
-/*document.addEventListener("DOMContentLoaded", function () {
-    const verticalLines = document.querySelectorAll(".vertical");
-    const experienceSection = document.getElementById("experience");
-
-    function checkScroll() {
-        const sectionTop = experienceSection.getBoundingClientRect().top;
-        const sectionBottom = experienceSection.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-
-        if (sectionTop < windowHeight && sectionBottom > 0) {
-            // Animate vertical lines to full height
-            verticalLines.forEach(line => {
-                line.style.height = "clamp(100px, 14vw, 150px)"; // Adjust height as needed
-            });
-        } else {
-            // Hide vertical lines when out of view
-            verticalLines.forEach(line => {
-                line.style.height = "0";
-            });
-        }
-    }
-    window.addEventListener("scroll", checkScroll);
-});*/
-
-// ========== EXPERIENCE SECTION BOXES LEFT RIGHY SCROLLING
-
-document.addEventListener('scroll', function () {
-    const scrollContainer = document.querySelector('.about-course');
-    // Only apply transform on large screens
-    if (window.innerWidth > 900) {
-        const scrollY = window.scrollY;
-        const containerWidth = scrollContainer.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        const maxScroll = containerWidth - viewportWidth;
-        const scrollProgress = Math.min(scrollY / (document.body.scrollHeight - window.innerHeight), 1);
-        const speedMultiplier = 15;
-        const translateX = -scrollProgress * maxScroll * speedMultiplier;
-        scrollContainer.style.transform = `translateX(${translateX}px)`;
-    } else {
-        // Remove transform on small screens
-        scrollContainer.style.transform = 'none';
-    }
-});
-
 
 
 // ==================================== SKILL SECTION ===============================================
 
-// ========== SKILL SECTION ZOOM IN & ZOOM OUT
-
-document.addEventListener("DOMContentLoaded", () => {
-    const zoomSection = document.querySelector(".skills");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    zoomSection.classList.add("visible"); // Zoom in
-                } else {
-                    zoomSection.classList.remove("visible"); // Zoom out
-                }
-            });
-        },
-        { threshold: 0.1 } // Trigger when 50% of the section is visible
-    );
-
-    observer.observe(zoomSection);
-});
-
-// ========== SKILL SECTION SHAPE ANIMATION
+// ========== SKILL SECTION CARD ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
-    const skillsSection = document.querySelector(".tag");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                skillsSection.classList.add("show");
-            } else {
-                skillsSection.classList.remove("show"); // Hide again when scrolling up
-            }
-        });
-    }, { threshold: 0.5 }); // Trigger when 30% of the section is visible
-
-    observer.observe(skillsSection);
-});
-
-
-// ========== SKILL SECTION TEXT ANIAMTION
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".add-skills");
+    const projects = document.querySelectorAll(".skill-card");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -320,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.4 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
@@ -329,31 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ==================================== PROJECT SECTION ===============================================
 
-// ========== PROJECT SECTION ZOOM IN & ZOOM OUT
-
-document.addEventListener("DOMContentLoaded", () => {
-    const zoomSection = document.querySelector(".projects");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    zoomSection.classList.add("visible"); // Zoom in
-                } else {
-                    zoomSection.classList.remove("visible"); // Zoom out
-                }
-            });
-        },
-        { threshold: 0.1 } // Trigger when 50% of the section is visible
-    );
-
-    observer.observe(zoomSection);
-});
-
 // ========== PROJECT SECTION TEXT SHAPE RIGHT ANIMATION
 
 document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".project");
+    const projects = document.querySelectorAll(".project-card");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -363,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
@@ -379,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
@@ -392,7 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
     projectLinks.forEach(link => {
         link.addEventListener("mouseover", function () {
             const projectInfo = this.getAttribute("data-info");
-            const projectImages = this.getAttribute("data-images").split(",");
 
             const categoryBox = this.closest(".catego");
             const infoBox = categoryBox.querySelector(".info-box .info-text");
@@ -412,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 infoBox.innerHTML = projectInfo;
                 infoBox.classList.add("fade-in");
                 infoBox.style.display = "block";
-            });
+            }, 180);
         });
 
         link.addEventListener("mouseout", function () {
@@ -464,6 +252,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.rel = "noopener noreferrer";
+    });
+});
+
 // ========== PROJECT SECTION AUTOMATIC ADJUSTMANTS
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -510,31 +304,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ==================================== CONTACT SECTION ===============================================
 
-// ========== ZOOM IN AND ZOOM OUT ANIMATION
-
-document.addEventListener("DOMContentLoaded", () => {
-    const zoomSection = document.querySelector(".contact-me");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    zoomSection.classList.add("visible"); // Zoom in
-                } else {
-                    zoomSection.classList.remove("visible"); // Zoom out
-                }
-            });
-        },
-        { threshold: 0.2 } // Trigger when 50% of the section is visible
-    );
-
-    observer.observe(zoomSection);
-});
 
 // ========== CONTACT SECTION ICON TEXT ANIMATION
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".col");
+    const projects = document.querySelectorAll(".contactme");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -544,40 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate"); // Resets animation when out of view
             }
         });
-    }, { threshold: 0.3 });
-
-    projects.forEach(project => observer.observe(project));
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".subtitle");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("animate");
-            } else {
-                entry.target.classList.remove("animate"); // Resets animation when out of view
-            }
-        });
-    }, { threshold: 0.3 });
-
-    projects.forEach(project => observer.observe(project));
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll(".s-icon");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("animate");
-            } else {
-                entry.target.classList.remove("animate"); // Resets animation when out of view
-            }
-        });
-    }, { threshold: 0.3 });
+    }, { threshold: 0 });
 
     projects.forEach(project => observer.observe(project));
 });
