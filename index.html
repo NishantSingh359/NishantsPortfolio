@@ -91,10 +91,14 @@
                     const menuButton = document.getElementById("menubutton");
                     const menu = document.getElementById("sidemenu");
                     const navLinks = menu.querySelectorAll("a[href^='#']");
+                    const body = document.body;
+                    const html = document.documentElement;
 
                     const setMenuState = (isOpen) => {
                         menu.classList.toggle("open", isOpen);
                         menu.classList.toggle("close", !isOpen);
+                        body.classList.toggle("menu-open", isOpen);
+                        html.classList.toggle("menu-open", isOpen);
                         menuButton.setAttribute("aria-expanded", String(isOpen));
                     };
 

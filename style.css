@@ -23,10 +23,19 @@ body {
     background-color: var(--bg);
     color: white;
     font-family: 'poppins', sans-serif;
+    transition: overflow 0.3s ease;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 html {  
     scroll-behavior: smooth;
+}
+
+html.menu-open {
+    overflow: hidden;
 }
 
 html,
