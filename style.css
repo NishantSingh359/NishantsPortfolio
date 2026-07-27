@@ -51,19 +51,14 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 6dvh;
-    background: transparent;
-    transition: background 0.4s ease-in-out, padding 0.4s ease-in-out;
+    background-color: var(--bg);
 }
 
-nav.scrolled {
-    backdrop-filter: blur(13px);
-    background-color: #03033645;
-}
 
 /*===== LEFT SECTION =====*/
 
@@ -202,7 +197,7 @@ nav ul li a.active::after {
         display: flex;
         width: 100%;
         height: 94dvh;
-        background-color: #010127;
+        background-color: var(--bg);
         position: absolute;
         right: -500px;
         padding: 35px 0px;
@@ -357,8 +352,25 @@ nav ul li a.active::after {
         width: 25px;
     }
 
+    /* When menu is open, all lines become 30px */
+    #sidemenu.open ~ #menubutton .bline {
+        width: 30px;
+    }
+
+    /* When menu is closed, reset to default widths */
+    #sidemenu.close ~ #menubutton .one {
+        width: 30px;
+    }
+
+    #sidemenu.close ~ #menubutton .two {
+        width: 20px;
+    }
+
+    #sidemenu.close ~ #menubutton .three {
+        width: 25px;
+    }
+
     nav ul {
-        z-index: -1;
         position: fixed;
         top: 0;
         left: 0;
@@ -366,7 +378,6 @@ nav ul li a.active::after {
         height: 96dvh;
         z-index: 100;
         transition: transform 0.45s ease, opacity 0.45s ease, visibility 0.45s ease;
-        transform: translateY(-24px);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -383,7 +394,7 @@ nav ul li a.active::after {
     }
 
     nav ul.close {
-        transform: translateY(-24px);
+        transform: translateY(-10px);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
