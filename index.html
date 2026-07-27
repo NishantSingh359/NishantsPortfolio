@@ -86,35 +86,34 @@
                     </div>
                 </div>
             </nav>
-
             <script>
-                const menuButton = document.getElementById("menubutton");
-                const menu = document.getElementById("sidemenu");
-                const navLinks = document.querySelectorAll(".nav-bar a");
+                document.addEventListener("DOMContentLoaded", () => {
+                    const menuButton = document.getElementById("menubutton");
+                    const menu = document.getElementById("sidemenu");
+                    const navLinks = menu.querySelectorAll("a[href^='#']");
 
-                let isOpen = false;
+                    const setMenuState = (isOpen) => {
+                        menu.classList.toggle("open", isOpen);
+                        menu.classList.toggle("close", !isOpen);
+                        menuButton.setAttribute("aria-expanded", String(isOpen));
+                    };
 
-                menuButton.addEventListener("click", () => {
-                    if (!isOpen) {
-                        menu.classList.remove("close");
-                        menu.classList.add("open");
-                        isOpen = true;
-                    } else {
-                        menu.classList.remove("open");
-                        menu.classList.add("close");
-                        isOpen = false;
-                    }
-                });
+                    menuButton.addEventListener("click", () => {
+                        setMenuState(!menu.classList.contains("open"));
+                    });
 
-                // Close menu with animation when any nav link is clicked
-                navLinks.forEach(link => {
-                    link.addEventListener("click", () => {
-                        menu.classList.remove("open");
-                        menu.classList.add("close");
-                        isOpen = false;
+                    navLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+
+                    window.addEventListener("keydown", (event) => {
+                        if (event.key === "Escape") setMenuState(false);
+                    });
+
+                    window.addEventListener("resize", () => {
+                        if (window.innerWidth > 600) setMenuState(false);
                     });
                 });
             </script>
+
 
             <!----------- NAV BACKGROUND HIDDEN AND AUTOMATICALLY SHOW----------->
             <script>
@@ -126,41 +125,6 @@
                         navbar.classList.remove("scrolled");
                     }
                 });
-            </script>
-
-            <!----------- NAV BAR MENUE CLICK EVENT AND ITEMS ANIMATION  ----------->
-
-            <!--- FOR NAV BAR COOL IFFECT --->
-            <script>
-                (function () {
-                    const links = document.querySelectorAll('.nav-bar li');
-                    const cursor = document.querySelector('.cursor');
-
-                    const animateIt = function (e) {
-                        const span = this.querySelector('span');
-                        const {offsetX: x, offsetY: y} = e,
-                            {offsetWidth: width, offsetHeight: height} = this,
-                            move = 25,
-                            xMove = (x / width) * (move * 2) - move,
-                            yMove = (y / height) * (move * 2) - move;
-
-                        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-                        if (e.type === 'mouseleave') span.style.transform = '';
-                    };
-
-                    const editCursor = (e) => {
-                        const {clientX: x, clientY: y} = e;
-                        cursor.style.left = `${x}px`;
-                        cursor.style.top = `${y}px`;
-                    };
-
-                    links.forEach(link => {
-                        link.addEventListener('mousemove', animateIt);
-                        link.addEventListener('mouseleave', animateIt);
-                    });
-
-                    window.addEventListener('mousemove', editCursor);
-                })();
             </script>
         </header>
 

@@ -138,33 +138,6 @@ nav ul li a {
     display: none;
 }
 
-/*===== COOL CURSOR =====*/
-
-.hover-this {
-    transition: all 0.3s ease;
-}
-
-.hover-this span {
-    display: inline-block;
-    font-family: "Poppins", sans-serif;
-    pointer-events: none;
-    transition: transform 0.3s linear;
-}
-
-.right .cursor {
-    pointer-events: none;
-    position: fixed;
-    padding: 0.1rem;
-    background: #fff;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    transition: transform 0.3s ease;
-    /*z-index: 9999;*/
-}
-
-.right ul li:hover~.cursor {
-    transform: translate(-50%, -50%) scale(8);
-}
 
 /*=== nav bar line===*/
 nav ul li a::after {
@@ -253,8 +226,8 @@ nav ul li a.active::after {
 
     .header-text {
         font-family: "Poppins", sans-serif;
-        font-size: 10px;
-        font-weight: 300;
+        font-size: 15px;
+        font-weight: 400;
         color: lightgray;
     }
 
@@ -262,7 +235,7 @@ nav ul li a.active::after {
         width: 100%;
         height: 1px;
         background-color: lightgray;
-        margin: 3dvh 0;
+        margin: 2dvh 0;
     }
 
     .nav-footer {
@@ -281,10 +254,10 @@ nav ul li a.active::after {
 
     .footer-text {
         font-family: "Poppins", sans-serif;
-        font-size: 10px;
+        font-size: 15px;
         font-weight: 300;
         color: lightgray;
-        margin-top: 4dvh;
+        margin-top: 2dvh;
         margin-bottom: 2dvh;
     }
 
@@ -298,7 +271,7 @@ nav ul li a.active::after {
     .social-text {
         text-decoration: none;
         color: white;
-        font-size: 2dvh;
+        font-size: 20px;
     }
 
     nav ul li .line::after {
@@ -376,28 +349,70 @@ nav ul li a.active::after {
     }
 
     nav ul {
+        z-index: -1;
         position: fixed;
         top: 0;
         left: 0;
         margin-top: 6dvh;
         height: 96dvh;
         z-index: 100;
-        transition: clip-path 0.8s ease-in-out;
-        clip-path: circle(0% at 100% 50%);
-        pointer-events: none;
+        transition: transform 0.45s ease, opacity 0.45s ease, visibility 0.45s ease;
+        transform: translateY(-24px);
         opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        overflow: hidden;
+        padding: 2dvh;
+        align-items: unset;
     }
 
     nav ul.open {
-        clip-path: circle(150% at 50% 50%);
-        pointer-events: all;
+        transform: translateY(0);
         opacity: 1;
+        visibility: visible;
+        pointer-events: all;
     }
 
     nav ul.close {
-        clip-path: circle(-50% at 0% 50%);
+        transform: translateY(-24px);
+        opacity: 0;
+        visibility: hidden;
         pointer-events: none;
+    }
+
+    .nav-header,
+    .nav-footer,
+    nav ul li {
+        opacity: 0;
+        transform: translateY(-18px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        will-change: transform, opacity;
+    }
+
+    nav ul.open .nav-header {
         opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.08s;
+    }
+
+    nav ul.open .nav-footer {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.28s;
+    }
+
+    nav ul.open li:nth-of-type(1) { transition-delay: 0.12s; }
+    nav ul.open li:nth-of-type(2) { transition-delay: 0.16s; }
+    nav ul.open li:nth-of-type(3) { transition-delay: 0.20s; }
+    nav ul.open li:nth-of-type(4) { transition-delay: 0.24s; }
+    nav ul.open li:nth-of-type(5) { transition-delay: 0.28s; }
+    nav ul.open li:nth-of-type(6) { transition-delay: 0.32s; }
+
+    nav ul.open .nav-header,
+    nav ul.open .nav-footer,
+    nav ul.open li {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .right ul li:hover~.cursor {
@@ -717,7 +732,7 @@ nav ul li a.active::after {
 
 .experience {
     padding: 10dvh 0;
-    #background: linear-gradient(135deg, #030336 0%, #0a0a4a 100%);
+    /*background: linear-gradient(135deg, #030336 0%, #0a0a4a 100%);*/
     position: relative;
     overflow: hidden;
 }
