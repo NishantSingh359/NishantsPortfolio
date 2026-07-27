@@ -535,29 +535,39 @@ nav ul li a.active::after {
     }
 
     .eyebrow {
-        font-size: 12px;
+        font-size: 15px !important;
         margin-bottom: 0.5rem;
     }
 
+    .l-text {
+        font-size: 25px;
+    }
     .name {
-        font-size: 2.2rem;
+        font-size: 30px;
         line-height: 1.1;
     }
 
     #element {
-        font-size: 1.8rem;
+        font-size: 33px;
         line-height: 1.2;
     }
 
     .hero-highlights {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
         gap: 16px;
         margin: 2rem 0;
     }
 
-    .hero-card {
-        padding: 18px;
+    .hero-card strong {
+        font-size: 35px;
+    }
+
+    .hero-card span {
+        padding: 10px;
         text-align: left;
+        font-size: 18px !important;
     }
 
 }
