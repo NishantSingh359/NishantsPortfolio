@@ -1,6 +1,6 @@
 :root {
     --bg: rgb(0, 0, 33);
-    --pcard-bg: rgba(6, 7, 40, 0.96);
+    --pcard-bg: rgb(6, 7, 40);
     --pcard-b: None;
     --scard-bg: #080c39;
     --scard-b: #05055bbf;
@@ -540,7 +540,7 @@ nav ul li a.active::after {
     }
 
     .l-text {
-        font-size: 25px;
+        font-size: 22px;
     }
     .name {
         font-size: 30px;
@@ -548,7 +548,7 @@ nav ul li a.active::after {
     }
 
     #element {
-        font-size: 33px;
+        font-size: 30px;
         line-height: 1.2;
     }
 
@@ -557,15 +557,13 @@ nav ul li a.active::after {
         flex-direction: column;
         width: 70%;
         gap: 16px;
-        margin: 2rem 0;
     }
 
     .hero-card strong {
-        font-size: 35px;
+        font-size: 40px;
     }
 
     .hero-card span {
-        padding: 10px;
         text-align: left;
         font-size: 18px !important;
     }
@@ -735,6 +733,10 @@ nav ul li a.active::after {
 
     .about-lead {
         font-size: 16px;
+        text-align: center;
+    }
+    .about-strengths {
+        justify-content: center;
     }
 }
 
@@ -1554,7 +1556,7 @@ nav ul li a.active::after {
 @media (max-width: 680px) {
     .contactme {
         padding: 24px;
-        gap: 24px;
+        gap: 8rem;
     }
 
     .contact-info-item {
